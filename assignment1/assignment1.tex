@@ -1,0 +1,97 @@
+\documentclass[]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\begin{center}
+\huge Assignment 1\\
+\\*
+\\*
+
+\large Shreeprasad Bhat\\
+\normalize AI20MTECH14011\\
+\end{center}
+\\
+\begin{abstract}
+This document illustrates scalar and vector products of two vectors
+\end{abstract}
+\\
+\\
+\\
+Download python code from :
+\begin{lstlisting}
+https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment1/codes
+\end{lstlisting}
+%
+\\
+
+\textbf{Problem}\\
+\\
+Find scalar and vector products of the two vectors\\
+\\
+$$a &= \begin{bmatrix}
+    3\\
+    -4\\
+    5
+    \end{bmatrix},
+b &= \begin{bmatrix}
+    -2\\
+    1\\
+    -3
+    \end{bmatrix}$$
+\\
+\\
+
+\textbf{Solution} :\\
+\textbf{Scalar product} :\\
+  $$a\;.\;b \; &= \; a\times b^T\\$$\\
+  $$ &= \;\begin{bmatrix}
+    3\\
+    -4\\
+    5
+    \end{bmatrix} \; \times \;
+    \begin{bmatrix}
+    -2 & 1 & -3 
+    \end{bmatrix}\\$$
+    \\
+    $$ &\; = \; (3 \times -2)\; + \;(-4 \times 1)\;+\;(5 \times -3)$$
+    \\
+    $$ &= -25$$\\  
+\textbf{Cross product} :
+
+$$a \; \times \; b \; &= \; \begin{bmatrix}
+    3\\
+    -4\\
+    5
+    \end{bmatrix} \; \times \;
+    \begin{bmatrix}
+    -2\\
+    1\\
+    -3
+    \end{bmatrix}\\
+    \; = \; \begin{vmatrix}
+    i & j & k\\
+    3 & -4 & 5\\
+    -2 & 1 & -3
+    \end{vmatrix}$$
+    \\
+    $$ &= ((-4 \times -3) \;-\;(1 \times 5))\; * \; i \; - \; ((3 \times 3) \; - \; (-2 \times 5)) \; * \; j \; + \; ((3 \times 1) \; - \; (-2 \times -4))\;*\;k $$
+    \\
+    $$ &= 7i\; - \; j \; - \;5k $$
+    \\
+    $$ &= \begin{bmatrix}
+    7\\
+    -1\\
+    -5
+    \end{bmatrix}
+    $$
+
+    
+\end{document}
