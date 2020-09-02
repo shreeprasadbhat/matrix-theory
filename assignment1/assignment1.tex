@@ -273,22 +273,45 @@ $
 %\end{enumerate}
 \section{Construction}
 \subsection{Scalar product}
-$\vec{ab^T}\;=\;\myvec{a_1\\a_2\\a_3} \;  \myvec{b_1\\b_2\\b_3}^T$= \myvec{a_1\times b_1+ a_2\times b_2 + a_3 \times b_3}
+
+\item Scalar product of two vectors a and b is defined as\\
+\begin{equation}
+\vec{a^Tb}=\myvec{a_1&a_2& \ldots\ a_n} \myvec{b_1\\b_2\\ \vdots \\b_3}    
+= a_1b_1+ a_2b_2 + \ldots + a_nb_n
+\end{equation}
+
+
 \subsection{Vector product}
-Vector product can be expressed as product of a skew-symmetric matrix and vector\\\\
-$\vec{a \times b} \;=\; \myvec{0 & a_3 & a_2\\ a_3& 0 &-a_1 \\ -a_2 & a_1 & 0 } \myvec{b_1\\b_2\\b_3}$
+
+\item Vector product can be expressed as product of a skew-symmetric matrix and vector\\
+
+\begin{equation}
+\vec{a \times b} \;=\; \myvec{0 & a_3 & a_2\\ a_3& 0 &-a_1 \\ -a_2 & a_1 & 0 } \myvec{b_1\\b_2\\b_3}    
+\end{equation}
 \section{Solution}
 \subsection{Scalar product}
-$\vec{ab^T}\;=\;\myvec{3\\-4\\5} \myvec{-2\\1\\-3}^T$
+\begin{equation}
+\vec{a^Tb}\;=\;\myvec{3&-4&5} \myvec{-2\\1\\-3}  
+\end{equation}
+\begin{equation}
+\;=\;(3\times -2)\;+\;(-4\times 1)\;+\;(5\times -3)\;
+\end{equation}
+\begin{equation}
+=\;-25    
+\end{equation}
 
-$\;=\;\myvec{3\times -2\;+\;-4\times 1\;+\;5\times -3}\;=\;-25$
-\subsection{Vector product}\\\\\\\
-$\vec{a \times b} \;&=\; \myvec{0 & 5 & -4\\ 5 & 0 & -3\\ -(-4) & 3 &  0} \myvec{-2\\1\\3}$
-\\\\\\
-$&\vec{a \times b} \; = \; \myvec{(0 \times -2) \; + \; (-5 \times 1) \; + \; (-4 \times -3)\\(5 \times -2) \; + \; (0 \times 1) \; + \; (-3 \times -3)\\
-(4 \times -2) \; + \; (3 \times 1) \; + (0 \times -3)}$
-\\\\
-$& \vec{a \times b} \; = \; \myvec{7\\-1\\5}$
+\subsection{Vector product}
+\begin{equation}
+\vec{a \times b} \;&=\; \myvec{0 & 5 & -4\\ 5 & 0 & -3\\ -(-4) & 3 &  0} \myvec{-2\\1\\3}    
+\end{equation}
+\\
+\begin{equation}
+\vec{a \times b} \; = \; \myvec{(0 \times -2) \; + \; (-5 \times 1) \; + \; (-4 \times -3)\\(5 \times -2) \; + \; (0 \times 1) \; + \; (-3 \times -3)\\(4 \times -2) \; + \; (3 \times 1) \; + (0 \times -3)}    
+\end{equation}
+\\
+\begin{equation}
+\vec{a \times b} \; = \; \myvec{7\\-1\\5}    
+\end{equation}
 %\subsection{Sol.a)}
 %\input{./chapters/sol_a.tex}
 %\subsection{Sol.b)}
