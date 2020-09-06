@@ -11,27 +11,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot(111, projection='3d')
 
-ax.set_xlim(-5,5)
-ax.set_ylim(0,6)
-ax.set_zlim(-2,7)
+ax.set_xlim(-8,0)
+ax.set_ylim(4,10)
+ax.set_zlim(0,15)
 
 ax.set_xlabel('x-axis')
 ax.set_ylabel('y-axis')
 ax.set_zlabel('z-axis')
 
-# plot vector a = [-2 4 5]
-handle_a = ax.quiver(0,0,0,-2,4,5, color='g')
+# plot vector a = [-2 4 5] and b = [-3 4 8]
+ax.plot3D([-3], [4], [8], marker='o', label='-3, 4, 8')
+ax.plot3D([-2], [4], [5], marker='o', label='-2, 4, 5')
 
-# plot vector b = [3 5 6]
-handle_b = ax.quiver(0,0,0,3,5,6, color='r')
+# equation given line
+ax.plot3D([0, -3],[9, 4],[14, 8], label = 'parallel line') 
 
-# plot equation x-y+z=-1
-x = np.linspace(-5,5)
-y = np.linspace(0,6)
-z = y-x-1
+# equation line parallel to given line
+ax.plot3D([1, -2], [9,4], [11, 5], label='line')
 
-ax.plot3D(x,y,z)
+plt.legend()
 
 plt.show()
