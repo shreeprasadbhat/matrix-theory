@@ -259,81 +259,35 @@ https://github.com/shreeprasadbhat/matrix-theory/blob/master/challenging_problem
 
 We know that in 3D, it is possible that 2 lines are not parallel, but do not meet.  They are known as skew lines. Find a way to points on these lines that are closest to each other?
 
-\section{Construction}
-
-Let lines $L_1$ and $L_2$ be two skew lines. Draw a line perpendicular to both $L_1$ and $L_2$. Let's say this $\perp$ line meets at $P$ in $L_1$ and $Q$ in $L_2$.These points will be the closest points between the skew lines.
-
-Now, let $\vec{d_1}$ be the direction vector along $L_1$ and $\vec{d_2}$ be the direction vector along $L_2$ in the same direction.
-\begin{equation}
-    \vec{d_1} = \myvec{a_1\\b_1\\c_1}, \vec{d_2} = \myvec{a_2\\b_2\\c_2} 
-\end{equation}
-Equation of line $L_1$ in parametric form will be
-\begin{equation}
-    \vec{r_1} = R_1 + \lambda{_1}d_1
-\end{equation}
-where $\vec{R_1} = \myvec{x_1\\y_1\\z_1}$ be any point on line $L_1$ and $d_1$ is the direction vector along $L_1$. So we have
-\begin{equation}\label{eq7}
-    \vec{r_1} = \myvec{x_1\\y_1\\z_1} + \lambda{_1}\myvec{a_1\\b_1\\c_1}
-\end{equation}
-Equation of line $L_2$ in parametric form will be
-\begin{equation}
-    \vec{r_2} = R_2 + \lambda{_2}d_2
-\end{equation}
-where $\vec{R_2} = \myvec{x_2\\y_2\\z_2}$ be any point on line $L_2$ and $d_2$ is the direction vector along $L_2$. So we have
-\begin{equation}\label{eq6}
-    \vec{r_2} = \myvec{x_2\\y_2\\z_2} + \lambda{_2}\myvec{a_2\\b_2\\c_2}
-\end{equation}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\columnwidth]{fig/figure1.png}
-    \caption{Closest point between two skew lines $L_1$ and $L_2$}
-    \label{fig:1}
-\end{figure}
-The direction vector $\perp$ to $\vec{d_1}$ is $\vec{PQ}$
-\begin{equation}
-    \vec{PQ} = \vec{r_2} - \vec{r_1}
-\end{equation}
-\begin{equation}
-    \vec{PQ} = \myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1} + \lambda{_2}\myvec{a_2\\b_2\\c_2} -  \lambda{_1}\myvec{a_1\\b_1\\c_1}
-\end{equation}
-Can be also written as
-\begin{equation}
-    \vec{PQ} = \myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1} - \myvec{a_1 & -a_2\\b_1 & -b_2\\c_1 & -c_2}\myvec{\lambda{_1}\\\lambda{_2}}
-\end{equation}
-
-We know that, dot product of a vector and an another vector perpendicular to it is $0$.
-\begin{equation}
-    \vec{d_1}^T\vec{PQ} = 0
-\end{equation}
-\begin{equation}
-    \myvec{a_1\\b_1\\c_1}^T\left(\myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1} - \myvec{a_1 & -a_2\\b_1 & -b_2\\c_1 & -c_2}\myvec{\lambda{_1} \\\lambda{_2}}\right) = 0
-\end{equation}
-\begin{equation}\label{eq1}
-    \myvec{a_1\\b_1\\c_1}^T\myvec{a_1 & -a_2\\b_1 & -b_2\\c_1 & -c_2}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{a_1\\b_1\\c_1}^T\myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1}
-\end{equation}
-Similarly,\\
-\begin{equation}
-    \vec{d_2}^T\vec{PQ} = 0
-\end{equation}
-\begin{equation}
-    \myvec{a_2\\b_2\\c_2}^T\left(\myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1} - \myvec{a_1 & -a_2\\b_1 & -b_2\\c_1 & -c_2}\myvec{\lambda{_1} \\\lambda{_2}}\right) = 0
-\end{equation}
-\begin{equation}\label{eq2}
-    \myvec{a_2\\b_2\\c_2}^T\myvec{a_1 & -a_2\\b_1 & -b_2\\c_1 & -c_2}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{a_2\\b_2\\c_2}^T\myvec{x_2 - x_1\\y_2 - y_1\\z_2 - z_1}
-\end{equation}
-
-Solving these equation $\eqref{eq1}$ and $\eqref{eq2}$ would give us $\lambda{_1}$ and $\lambda{_2}$. Substituting $\lambda{_1}$ and $\lambda{_2}$ in $\eqref{eq7}$ and $\eqref{eq6}$ would give us closest points between skew lines.
-
 \section{Solution}
-Now let's look at example were we find the closest point between two skew lines
+Let's illustrate this problem with an example. Find the closest point between two skew lines
 \begin{equation}\label{eq4}
     L_1: r_1 = \myvec{1\\1\\0} + \lambda{_1}\myvec{2\\-1\\1}
 \end{equation}
 \begin{equation}\label{eq5}
     L_2: r_2 = \myvec{2\\1\\-1} + \lambda{_2}\myvec{3\\-5\\2}
 \end{equation}
-Substituting in equation \eqref{eq1}
+Let P and Q be two closest points on line $L_1$ and $L_2$ respectively. Then direction vector along line PQ is $P - Q$
+\begin{equation}
+    P - Q = \myvec{2-1\\1-1\\-1-0} + \lambda{_2}\myvec{3\\-5\\2} - \lambda{_1}\myvec{2\\-1\\1}
+\end{equation}
+can also be written as
+\begin{equation}\label{eq10}
+    P - Q = \myvec{1\\0\\-1} - \myvec{2 & -3\\-1 & 5\\1 & -2}\myvec{\lambda{_1}\\\lambda{_2}}
+\end{equation}
+We know that dot product of a vector and an another vector perpendicular to it is 0. The direction vector of $L_1$ is $\myvec{2\\-1\\1}$ and $P - Q$ is $\perp$ to it, hence
+\begin{equation}\label{eq11}
+    \myvec{2\\-1\\1}^T\left(P - Q\right) = 0
+\end{equation}
+Also, direction vector of $L_2$ is $\myvec{3\\-3\\2}$ and it is $\perp$ to $P - Q$, hence
+\begin{equation}\label{eq12}
+    \myvec{3\\-5\\2}^T\left(P - Q\right) = 0
+\end{equation}
+Substituting equation \eqref{eq10} in \eqref{eq11}
+\begin{equation}
+    \myvec{2\\-1\\1}^T\left(\myvec{1\\0\\-1} - \myvec{2 & -3\\-1 & 5\\1 & -2}\myvec{\lambda{_1}\\\lambda{_2}}\right) = 0
+\end{equation}
+Rearranging above equation
 \begin{equation}
     \myvec{2\\-1\\1}^T\myvec{2 & -3\\-1 & 5\\1 & -2}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{2\\-1\\1}^T\myvec{1\\0\\-1}
 \end{equation}
@@ -343,16 +297,21 @@ Substituting in equation \eqref{eq1}
 \begin{equation}\label{eq3}
     \implies 6\lambda{_1} -13\lambda{_2} = 1
 \end{equation}
-Substituting in equation \eqref{eq2}
+Substituting equation \eqref{eq10} in \eqref{eq12}
+\begin{equation}
+    \myvec{3\\-5\\2}^T\left(\myvec{1\\0\\-1} - \myvec{2 & -3\\-1 & 5\\1 & -2}\myvec{\lambda{_1}\\\lambda{_2}}\right) = 0
+\end{equation}
+Rearranging above equation
 \begin{equation}
     \myvec{3\\-5\\2}^T\myvec{2 & -3\\-1 & 5\\1 & -2}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{3\\-5\\2}^T\myvec{1\\0\\-1}
 \end{equation}
 \begin{equation}
     \myvec{13 & -38}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{1}
 \end{equation}
-\begin{equation}
-    13\lambda{_1} - 38\lambda{_2} = 1
+\begin{equation}\label{eq14}
+    \implies13\lambda{_1} - 38\lambda{_2} = 1
 \end{equation}
+Solve \eqref{eq3} and \eqref{eq14} to get $\lambda{_1}$ and $\lambda{_1}$
 \begin{equation}
     \myvec{6 & -13\\13 & -38}\myvec{\lambda{_1}\\\lambda{_2}} = \myvec{1\\1} 
 \end{equation}
