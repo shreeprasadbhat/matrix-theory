@@ -22,14 +22,18 @@ ax.set_ylabel('y-axis')
 ax.set_zlabel('z-axis')
 
 # plot vector a = [-2 4 5] and b = [-3 4 8]
-ax.plot3D([-3], [4], [8], marker='o', label='-3, 4, 8')
-ax.plot3D([-2], [4], [5], marker='o', label='-2, 4, 5')
+#ax.plot3D([-3], [4], [8], marker='o', label='(-3, 4, 8)')
+
+ax.plot3D([-2], [4], [5], marker='o', label='P = (-2, 4, 5)')
+ax.text(-2, 4, 5,'P')
+
+
 
 # equation given line
-ax.plot3D([0, -3],[9, 4],[14, 8], label = 'parallel line') 
+ax.plot3D([0, -3],[9, 4],[14, 8], label = 'line (1.0.1)') 
 
 # equation line parallel to given line
-ax.plot3D([1, -2], [9,4], [11, 5], label='line')
+ax.plot3D([1, -2], [9,4], [11, 5], label='line (3.0.4)')
 
 plt.legend()
 
