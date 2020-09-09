@@ -261,37 +261,25 @@ Show that
     \mydet{-a^2 & ab & ac\\ba & -b^2 & bc\\ca & cb & -c^2} = 4a^2b^2c^2
 \end{equation}
 \section{Solution}
-We will show \eqref{eq1} using only properties of determinants.
-
-By property of determinant we can take multiple of a row out of determinant. Using this property we can take $a$ out of $row 1$ and $b$ out of $row 2$ and $c$ out of $row 3$, we get
 \begin{equation}\label{eq2}
     \mydet{-a^2 & ab & ac\\ba & -b^2 & bc\\ca & cb & -c^2} = abc\mydet{-a & b & c\\a & -b & c\\a & b & -c}
 \end{equation}
-By property of determinant that $\mydet{A^T} = \mydet{A}$, we can rewrite \eqref{eq2} as
 \begin{equation}\label{eq3}
      = abc\mydet{-a & a & a\\b & -b & b\\c & c & -c}
 \end{equation}
-Again using property we can take $a$ out of $row 1$ and $b$ out of $row 2$ and $c$ out of $row 3$, we get
 \begin{equation}\label{eq4}
      = a^2b^2c^2\mydet{-1 & 1 & 1\\1 & -1 & 1\\1 & 1 & -1}
 \end{equation}
-Property of determinant says that interchange rows changes sign of determinant. Using this property interchange $row 1$ with $row 3$, then interchange $row 2$ with $row 3$, we get
 \begin{equation}\label{eq5}
      = a^2b^2c^2\mydet{1 & -1 & 1\\1 & 1 & -1\\-1 & 1 & 1}
 \end{equation}
-By property of determinant that elementary row operations does not change value of the determinant, we get
 \begin{equation}\label{eq6}
-     = a^2b^2c^2\mydet{1 & -1 & 1\\1 & 1 & -1\\-1 & 1 & 1}\xrightarrow[R_3 \leftarrow R_3 - R_1]{R_2 \leftarrow R_2 - R_1}a^2b^2c^2\mydet{1 & -1 & 1\\0 & 2 & -2\\0 & 0 & 2}
+     \xrightarrow[R_3 \leftarrow R_3 - R_1]{R_2 \leftarrow R_2 - R_1}a^2b^2c^2\mydet{1 & -1 & 1\\0 & 2 & -2\\0 & 0 & 2}
 \end{equation}
-Determinant of a triangular matrix is equal to product of it's diagonals, so we get
 \begin{equation}\label{eq7}
     = a^2b^2c^2 \times \left(1 \times 2 \times 2\right)
 \end{equation}
 \begin{equation}\label{eq8}
     = 4a^2b^2c^2
-\end{equation}
-Hence we showed that
-\begin{equation}\label{eq9}
-    \mydet{-a^2 & ab & ac\\ba & -b^2 & bc\\ca & cb & -c^2} = 4a^2b^2c^2
 \end{equation}
 \end{document}
