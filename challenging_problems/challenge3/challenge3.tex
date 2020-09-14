@@ -259,26 +259,34 @@ Prove that, Sides opposite to equal angles of a triangle are equal.
 \end{figure}
 Given that two angles of traingle are equal,
 \begin{align}
-    \label{eq1}\angle{ABC}&=\angle{ACB}\\
-    \label{eq1}\cos\angle{ABC} &= \cos\angle{ACB}\\
-    \label{eq2}\frac{(\vec{B}-\vec{A})^T(\vec{B}-\vec{C})}{\norm{\vec{B}-\vec{A}}\norm{\vec{B}-\vec{C}}} &= \frac{(\vec{C}-\vec{A})^T(\vec{C}-\vec{B})}{\norm{\vec{C}-\vec{A}}\norm{\vec{C}-\vec{B}}}\\
+    \label{eq1}\angle{ABC}&=\angle{ACB}\\[5pt]
+    \label{eq1}\cos\angle{ABC} &= \cos\angle{ACB}\\[5pt]
+    \label{eq2}\frac{(\vec{B}-\vec{A})^T(\vec{B}-\vec{C})}{\norm{\vec{B}-\vec{A}}\norm{\vec{B}-\vec{C}}} &= \frac{(\vec{C}-\vec{A})^T(\vec{C}-\vec{B})}{\norm{\vec{C}-\vec{A}}\norm{\vec{C}-\vec{B}}}\\[7pt]
     \label{eq3}\frac{(\vec{B}-\vec{A})^T(\vec{B}-\vec{C})}{\norm{\vec{B}-\vec{A}}} &= \frac{(\vec{C}-\vec{A})^T(\vec{C}-\vec{B})}{\norm{\vec{C}-\vec{A}}}
 \end{align}
+\\
 It can be showed that,
 % \norm{\vec{B}}^2 - \vec{B}^T\vec{C} - \vec{A}^T\vec{B} + \vec{A}^T\vec{C}
 % $\norm{\vec{B}}^2 = \norm{\vec{A}-\vec{B}}^2 - \norm{\vec{A}}^2 + 2\vec{A}^T\vec{B}$
-\begin{align}
-    \label{eq4}(\vec{B}-\vec{A})^T(\vec{B}-\vec{C}) &= \norm{\vec{A}-\vec{B}}^2 - (\vec{A}-\vec{C})^T(\vec{A}-\vec{B})\\
+\begin{multline}
+    \label{eq4}(\vec{B}-\vec{A})^T(\vec{B}-\vec{C}) &= \norm{\vec{A}-\vec{B}}^2 - (\vec{A}-\vec{C})^T(\vec{A}-\vec{B})
+\end{multline}
+\begin{multline}
     \label{eq5}(\vec{C}-\vec{A})^T(\vec{C}-\vec{B}) &= \norm{\vec{A}-\vec{C}}^2 - (\vec{A}-\vec{C})^T(\vec{A}-\vec{B})
-\end{align}
+\end{multline}
+\\
 Substituting \eqref{eq4} and \eqref{eq5} in \eqref{eq3},
-\begin{flalign}
+\\
+{\footnotesize
+\begin{align}
 \label{eq6}\frac{\norm{\vec{A}-\vec{B}}^2 - (\vec{A}-\vec{C})^T(\vec{A}-\vec{B})}{\norm{\vec{B}-\vec{A}}}&=\frac{\norm{\vec{A}-\vec{C}}^2 - (\vec{A}-\vec{C})^T(\vec{A}-\vec{B})}{\norm{\vec{C}-\vec{A}}}\\
 \label{eq7}\norm{\vec{A}-\vec{B}} - \frac{(\vec{A}-\vec{C})^T(\vec{A}-\vec{B})}{\norm{\vec{B}-\vec{A}}}&=\norm{\vec{A}-\vec{C}} - \frac{(\vec{A}-\vec{C})^T(\vec{A}-\vec{B})}{\norm{\vec{C}-\vec{A}}}\\
 \label{eq8}\norm{\vec{A}-\vec{B}} - \norm{\vec{A}-\vec{C}} \cos{\angle{BAC}}&=\norm{\vec{A}-\vec{C}} - \norm{\vec{A}-\vec{B}} \cos{\angle{CAB}}\\
 \label{eq9}\norm{\vec{A}-\vec{B}} +  \norm{\vec{A}-\vec{B}} \cos{\angle{CAB}}&=\norm{\vec{A}-\vec{C}} + \norm{\vec{A}-\vec{C}} \cos{\angle{BAC}}\\
 \label{eq10}\norm{\vec{A}-\vec{B}}(1 + \cos{\angle{CAB}})&=\norm{\vec{A}-\vec{C}}(1 + \cos{\angle{BAC}})\\
 \implies\norm{\vec{A}-\vec{B}} &= \norm{\vec{A}-\vec{C}}
-\end{flalign}
+\end{align}
+}
+\\
 Hence we proved that sides opposite to equal angles of triangle are equal.
 \end{document}
