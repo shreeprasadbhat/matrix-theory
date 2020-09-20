@@ -267,16 +267,17 @@ We know that, area of triangle can be obtained by cross product.
 \begin{align}
     \text{Area of }\triangle{ABC} 
     \label{eq2}&= \frac{1}{2} \norm{(\vec{B}-\vec{A}) \times (\vec{B}-\vec{C})}\\
-    \label{eq3}&= \frac{1}{2} \norm{\big[(\vec{B}-\vec{D})+(\vec{D}-\vec{A})\big] \times (\vec{B}-\vec{C})}\\
+    \label{eq3}&= \frac{1}{2} \norm{\big((\vec{B}-\vec{D})+(\vec{D}-\vec{A})\big) \times (\vec{B}-\vec{C})}\\
     \label{eq4}&= \text{Area of }\triangle{BCD} + \frac{1}{2} \norm{(\vec{D}-\vec{A}) \times (\vec{B}-\vec{C})}
 \end{align}
 }
 From \eqref{eq1} and \eqref{eq4} we get,
-\begin{align}
-    \label{eq5}\norm{(\vec{D}-\vec{A}) \times (\vec{B}-\vec{C})} &= 0\\
-    \label{eq6}\norm{(\vec{D}-\vec{A}) \times (\vec{B}-\vec{C})} &= \norm{k(\vec{B}-\vec{C}) \times  (\vec{B}-\vec{C})}\\
-    \label{eq7}\implies (\vec{D}-\vec{A}) &= k(\vec{B}-\vec{C})\\
-    \label{eq8}\implies \vec{A}\vec{D} &\parallel \vec{B}\vec{C}
-\end{align}
+\begin{equation}
+    \label{eq5}\norm{(\vec{D}-\vec{A}) \times (\vec{B}-\vec{C})} = 0
+\end{equation}
+We know that, two nonzero vectors are \textbf{parallel} if and only if their cross product is zero.
+\begin{equation}
+    \label{eq6}\implies (\vec{A}-\vec{D}) = k(\vec{B}-\vec{C})
+\end{equation}
 Hence proved triangles on the same base and having equal areas lie between the same parallels.
 \end{document}
