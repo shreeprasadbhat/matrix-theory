@@ -14,7 +14,7 @@ import copy
 from sympy import Matrix # used for testing purpose
 
 
-# ------------------------Utility functions-------------------------------------------
+# ------------------------Utility functions------------------------------------------------------------------
 def iszero(elt) :
     if elt == 0 :
         return True
@@ -22,64 +22,68 @@ def iszero(elt) :
         return False
 
 def is_square(matrix) :
-# Input : 2D numpy array
-# Output : True - if input is square matrix
-#          False - if input is non-square matrix
+# Input     :   matrix  - 2D numpy array
+# Output    :   True    - if input is square matrix
+#               False   - if input is non-square matrix
     [nRows, nCols] = matrix.shape
     if nRows == nCols :
         return True
     return False
 
 def is_singular(rref) :
-# Input : row reduced echelon form of matrix of square matrix
-# Output : True - if matrix is singular
-#          False - if matrix is non-singular
+# Input     :   rref    -  row reduced echelon form of matrix of square matrix
+# Output    :   True    -  if matrix is singular
+#               False   -  if matrix is non-singular
     [nRows, nCOls] = rref.shape
     for iRow in range(nRows) :
         if np.all(rref[iRow, :] == 0) :
             return True
     return False
 
-
-def iszerorow(row) :
-    if np.all(row == 0) :
-        return True
-    else:
-        return False
-
 def do_row_exchange(matrix, row_num1,row_num2) :
-# Input : matrix : 2D numpy array
-#         row_num1, row_num2 : index of the rows to be interchanged
-# Output : matrix : 2D numpy array with rows interchanged
+# Input     :   matrix   -  2D numpy array
+#               row_num1 -  index of the row to be interchanged
+#               row_num2 -  index of other row to be interchanged
+# Output    :   matrix   -  2D numpy array with rows interchanged
+
     temp = copy.deepcopy(matrix[row_num1, :])
     matrix[row_num1, :] = copy.deepcopy(matrix[row_num2, :])
     matrix[row_num2, :] = copy.deepcopy(temp)
     return matrix
 
 def do_row_reduction(rref, inverse, row_num, pivot_row_num, pivot_col_num) :
-# Input : rref - 2D numpy array
-#         inverse - 2D numpy array
-#          row_num - index of row which is to be reduced
-#          pivot_row_num, pivot_col_num - row and col of index of pivot element
+# Input :   rref            - 2D numpy array
+#           inverse         - 2D numpy array
+#           row_num         - index of row which is to be reduced
+#           pivot_row_num   - row of index of pivot element
+#           pivot_col_num   - col of index of pivot element
+# Output :  rref, inverse   - return rref, inverse after rowr eduction
+
     c = rref[row_num, pivot_col_num]
     rref[row_num, :] = rref[row_num, :] - c * rref[pivot_row_num, :]
     inverse[row_num, :] = inverse[row_num, :] - c * inverse[pivot_row_num, :]
     return [rref, inverse]
 
 def make_pivot_elt_one(rref, inverse, pivot_row_num, pivot_col_num) :
+# Input :   rref            - 2D numpy array
+#           inverse         - 2D numpy array
+#           row_num         - index of row which is to be reduced
+#           pivot_row_num   - row of index of pivot element
+#           pivot_col_num   - col of index of pivot element
+# Output :  rref, inverse   - return rref, inverse after making pivot 1, by diving the row by pivot
     pivot = rref[pivot_row_num, pivot_col_num]
     rref[pivot_row_num, :] = rref[pivot_row_num, :] / pivot
     inverse[pivot_row_num, :] = inverse[pivot_row_num, :] / pivot
     return [rref, inverse]
-# -------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
 
 
 
-# -----------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
 def find_rref(matrix) :
-# Input : matrix - matrix whose row reduced echelon form is to be computed
-# Output : rref - row reduced echelon form of input matrix
-#          inverse - inverse of matrix, correct only for square matrix
+# Input     :   matrix  - matrix whose row reduced echelon form is to be computed
+# Output    :   rref    - row reduced echelon form of input matrix
+#               inverse - inverse of matrix, correct only for square matrix
     rref = copy.deepcopy(matrix)
 
     [nRows, nCols] = rref.shape
@@ -94,13 +98,13 @@ def find_rref(matrix) :
         if iszero(rref[curRow, curCol]) :
             nextRow = curRow + 1
             while nextRow <= lastRow :
-                if not iszero(rref[nextRow, curCol]) : break
+                if not iszero(rref[nextRow, curCol]) : 
+                    break
                 nextRow += 1
-            if nextRow <= lastRow : 
-                rref = do_row_exchange(rref, curRow, nextRow)
-                inverse = do_row_exchange(inverse, curRow, nextRow)
-            else :
-                continue
+            if nextRow > lastRow : 
+                continue 
+            rref = do_row_exchange(rref, curRow, nextRow)
+            inverse = do_row_exchange(inverse, curRow, nextRow)
         [rref, inverse] = make_pivot_elt_one(rref, inverse, curRow, curCol)
         for nextRow in range(curRow + 1, lastRow + 1) :
             [rref, inverse] = do_row_reduction(rref, inverse, nextRow, curRow, curCol)
@@ -123,12 +127,12 @@ def find_rref(matrix) :
 
     return [rref, inverse]
 
-# ---------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 
 
 
 
-# ---------------------------Test functions----------------------------------------
+# ---------------------------Test functions---------------------------------------------------------------
 def test_rref(matrix, computed_rref) :
     [actual_rref, c] = Matrix(matrix).rref()
     actual_rref = np.array(actual_rref.tolist()).astype('float64')
@@ -187,11 +191,10 @@ A7 = np.array([[1,1,1,1,1.0],[1,1,2,2,2],[1,1,1,4,5]])
 A8 = np.array([[1,1,1,1],[1,1,1,1],[1,2,3,4]])
 A9 = np.array([[1,1,1],[1,1,2],[2,3,1]])
 
-inputs = [A1, A2, A3, A4, A5, A6, A7, A8, A9] # add or remove matrix input here
+inputs = [A1, A2, A3, A4, A5, A6, A7, A8, A9] # add or remove input here
 
 count = 1
-for A in inputs :
-    matrix = A 
+for matrix in inputs :
 
     matrix = matrix.astype('float64')
 
@@ -203,7 +206,7 @@ for A in inputs :
 
     display(matrix, rref, inverse)
 
-    print('\n\nTest correctness using built-in methods :')
+    print('\n\nTest correctness using python library method :')
     
     test_rref(matrix, rref)
     if is_square(rref) and not is_singular(rref) : 
