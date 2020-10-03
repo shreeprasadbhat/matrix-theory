@@ -272,13 +272,12 @@ These eigenvalues are equal only if
 	(a - b)^2 + 4h^2 = 0
 	\implies  a = b, h = 0
 \end{align}
-Let $\lambda_1$ and $\lambda_2$ be two eigenvalue of V. Let $\vec{u} = \myvec{u_1 \\ u_2}$  and  $\vec{v} = \myvec{v_1 \\ v_2}$ be two corresponding eigenvectors.
+Let $\lambda_1$ and $\lambda_2$ be two eigenvalue of V. Let $\vec{u}$  and  $\vec{v}$ be two corresponding eigenvectors.
 We have
 \begin{align}
 	\lambda_1 (\vec{u}^T\vec{v}) 
 	&= (\lambda_1 \vec{u})^T\vec{v}\\
 	&= (V \vec{u})^T\vec{v}\\
-	&= au_1v_1 + h(u_2v_1 + u_1v_2) + bu_2v_2\\
 	&= \vec{u}^T(\vec{V}\vec{v})\\
 	&= \vec{u}^T(\lambda_2\vec{v})\\
 	&= \lambda_2(\vec{u}^T\vec{v})
@@ -293,16 +292,16 @@ If $\lambda_1 = \lambda_2$, then from \eqref{eq4},
 	\implies \vec{V} = aI
 \end{align}
 Thus, for real symmetric matrix eigenvectors will be orthogonal.\\
-If $\vec{P} = \myvec{u_1 & v_1\\u_2 & v_2}$. By definition of orthogonal matrix, we have,
+If $\vec{P}$ be eigenvector matrix. By definition of orthogonal matrix, we have,
 \begin{align}
 	\vec{P}\vec{P^T} = \vec{P}^T\vec{P} = I
 \end{align}
 Consider,
 \begin{align}
 	\vec{V}\vec{P} 
-	&= \myvec{\vec{V}u_1 & \vec{V}v_1\\\vec{V}u_2 & \vec{V}v_2}\\
-	&= \myvec{\vec{\lambda_1}u_1 & \vec{\lambda_2}v_1\\\vec{\lambda_1}u_2 & \vec{\lambda_2}v_2}\\
-	&= \myvec{u_1 & v_1\\u_2 & v_2} \myvec{\lambda_1 & 0\\0 &\lambda_2}\\
+	&= \myvec{\vec{V}\vec{u} & \vec{V}\vec{v}}\\
+	&= \myvec{\lambda_1\vec{u} & \lambda_2\vec{v}}\\
+	&= \myvec{\vec{u} & \vec{v}} \myvec{\lambda_1 & 0\\0 &\lambda_2}\\
 	&= \vec{P}\vec{D}\\
 	\vec{V}\vec{P}\vec{P}^T &= \vec{P}\vec{D}\vec{P}^T\\
 	\vec{V} &= \vec{P}\vec{D}\vec{P}^T
