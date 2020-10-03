@@ -255,11 +255,7 @@ $V=PDP^T$, with $P^TP=I$.  So P is an orthogonal matrix.  For what matrices V do
 \section{ANSWER}
 We get this kind of result for real symmetric matrix. Any real symmetric matrix can always be decomposed as $V=PDP^T$, with $P^TP=I$.
 \section{PROOF}
-Consider an $2 \times 2$  real symmetric matrix
-\begin{equation}
-	\vec{V} = \myvec{a & h\\h & b}
-\end{equation}
-Its characteristic equation is
+Let $\vec{V}$ be an $n \times n$ real symmetric matrix. Its characteristic equation is
 \begin{equation}
 	\lambda^2 - (a + b)\lambda + (ab - h^2) = 0
 \end{equation}
@@ -292,17 +288,39 @@ If $\lambda_1 = \lambda_2$, then from \eqref{eq4},
 	\implies \vec{V} = aI
 \end{align}
 Thus, for real symmetric matrix eigenvectors will be orthogonal.\\
-If $\vec{P}$ be eigenvector matrix, by definition of orthogonal matrix, we have,
+% {\begin{pmatrix}|&amp;&amp;|\\\mathbf {v} _{1}&amp;\cdots &amp;\mathbf {v} _{n}
+Let $\vec{P} $ be eigenvector matrix, in which very two eigenvectors are orthogonal,
+\begin{equation}
+	\vec{P} = \myvec{ 
+	| & & | \\
+	\vec{v_1} & \cdots & \vec{v_n}\\
+	| & & | }
+\end{equation}
+By definition of orthogonal matrix, we have,
 \begin{align}
 	\vec{P}\vec{P^T} = \vec{P}^T\vec{P} = I
 \end{align}
 Consider,
 \begin{align}
-	\vec{V}\vec{P} 
-	&= \myvec{\vec{V}\vec{u} & \vec{V}\vec{v}}\\
-	&= \myvec{\lambda_1\vec{u} & \lambda_2\vec{v}}\\
-	&= \myvec{\vec{u} & \vec{v}} \myvec{\lambda_1 & 0\\0 &\lambda_2}\\
-	&= \vec{P}\vec{D}\\
+	\vec{V}\vec{P}
+	&= \myvec{ 
+				| & & | \\
+				\vec{V}\vec{v_1} & \cdots & \vec{V}\vec{v_n}\\
+				| & & | }\\
+	&= \myvec{ 
+				| & & | \\
+				\lambda_1\vec{v_1} & \cdots & \lambda_n\vec{V}\vec{v_n}\\
+				| & & | }\\
+	&= \myvec{ 
+				| & & | \\
+				\vec{v_1} & \cdots & \vec{V}\vec{v_n}\\
+				| & & | }
+		\myvec{ 
+				\lambda_1 & 0 & \cdots & 0 \\
+				0 & \lambda_2 & \ddots & \vdots\\
+				\vdots & \ddots & \ddots & 0 \\
+				0 & 0 & \cdots & \lambda_n}\\
+	\vec{V}\vec{P} &= \vec{P}\vec{D}\\
 	\vec{V}\vec{P}\vec{P}^T &= \vec{P}\vec{D}\vec{P}^T\\
 	\vec{V} &= \vec{P}\vec{D}\vec{P}^T
 \end{align}
