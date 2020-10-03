@@ -253,9 +253,9 @@ In conic sections you have seen that
 
 $V=PDP^T$, with $P^TP=I$.  So P is an orthogonal matrix.  For what matrices V do you get this kind of decomposition where P is an orthogonal ?  Can you prove this result?
 \section{ANSWER}
-We get this kind of result for real symmetric matrix. Any real symmetric matrix can always be decomposed as $V=PDP^T$, with $P^TP=I$.
+We get this kind of result for symmetric matrix. Any symmetric matrix can always be decomposed as $V=PDP^T$, with $P^TP=I$.
 \section{PROOF}
-Let $\vec{V}$ be an $2 \times 2$ real symmetric matrix. Its characteristic equation is
+Let $\vec{V}$ be an $2 \times 2$ symmetric matrix. Its characteristic equation is
 \begin{equation}
 	\lambda^2 - (a + b)\lambda + (ab - h^2) = 0
 \end{equation}
@@ -263,7 +263,8 @@ So the eigenvalues are given by
 \begin{equation}
 	\frac{(a + b) \pm \sqrt{(a - b)^2 + 4h^2}}{2}
 \end{equation}
-These eigenvalues are equal only if
+Since discriminant $(a - b)^2 + 4h^2$ is always positive, \textbf{eigenvalues of symmetric matrices will always be real}.\\
+Also, these eigenvalues are equal only if
 \begin{equation}\label{eq4}
 	(a - b)^2 + 4h^2 = 0
 	\implies  a = b, h = 0
@@ -272,10 +273,10 @@ Let $\lambda_1$ and $\lambda_2$ be any two eigenvalue of V. Let $\vec{u}$  and  
 We have
 \begin{align}
 	\lambda_1 (\vec{u}^T\vec{v}) 
-	&= (\lambda_1 \vec{u})^T\vec{v}\\
-	&= (V \vec{u})^T\vec{v}\\
-	&= \vec{u}^T(\vec{V}\vec{v})\\
-	&= \vec{u}^T(\lambda_2\vec{v})\\
+	&= (\lambda_1 \vec{u})^T\vec{v}
+	= (V \vec{u})^T\vec{v}\\
+	&= \vec{u}^T(\vec{V}\vec{v})
+	= \vec{u}^T(\lambda_2\vec{v})\\
 	&= \lambda_2(\vec{u}^T\vec{v})
 \end{align}
 If $\lambda_1 \neq \lambda_2$, then it follows that
@@ -287,7 +288,7 @@ If $\lambda_1 = \lambda_2$, then from \eqref{eq4},
 	\vec{V} = \myvec{a & 0\\0 & a}
 	\implies \vec{V} = aI
 \end{align}
-Thus, for real symmetric matrix every pair of eigenvectors will be orthogonal to each other.\\
+It follows that \textbf{any $n \times n$ symmetric matrix must possess $n$ mutually orthogonal eigenvectors}.\\\\
 Let $\vec{P} $ be eigenvector matrix, in which very two eigenvectors are orthogonal,
 \begin{equation}
 	\vec{P} = \myvec{ 
