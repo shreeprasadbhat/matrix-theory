@@ -303,16 +303,18 @@ Under \textit{Affine transformation},
 \begin{equation}\label{eq11}
 	\myvec{X & Y} \myvec{u_1 & v_1 \\ u_2 & v_2} \myvec{\lambda_1 & 0\\ 0 & \lambda_2} \myvec{u_1 & u_2 \\ v_1 & v_2} \myvec{X \\ Y} = 0
 \end{equation}
-\begin{equation}\label{eq12}
+\begin{equation}
 	\myvec{X^\prime & Y^\prime}  \myvec{\lambda_1 & 0\\ 0 & \lambda_2} \myvec{X^\prime \\ Y^\prime} = 0
 \end{equation}
-where $X^\prime = Xu_1 + Yu_2$ and $Y^\prime = Xv_1 + Yv_2$
+\begin{equation}\label{eq12}
+	\text{where } X^\prime = Xu_1 + Yu_2 \text{ and } Y^\prime = Xv_1 + Yv_2
+\end{equation}
 \begin{equation}\label{eq13}
 	\implies \lambda_1 (X^\prime)^2 + \lambda_2 (Y^\prime)^2 = 0
 \end{equation}
 \eqref{eq13} is called \textit{Spectral decomposition} of matrix
 \begin{align}
-	X^\prime &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}Y^\prime\\
+	\implies X^\prime &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}Y^\prime\\	
 	u_1X + u_2Y &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}(v_1X + v_2Y)\\
 	\label{eq14}u_1(x-\alpha) + u_2(y-\beta) &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}(v_1(x-\alpha) + v_2(y-\beta))
 \end{align}
@@ -414,13 +416,13 @@ where :
 	\vec{R} = \myvec{r_{11} & r_{12}\\0 & r_{22}}
 \end{align}
 \begin{align}
-	\label{eq32}\vec{c_1} = \vec{q_1}r_{11}\\
-	\label{eq33}r_{11} = \norm{\vec{c_1}} = \sqrt{a^2 + h^2}\\
-	\label{eq34}\vec{q_1} = \frac{\vec{c_1}}{r_{11}}\\
-	\label{eq35}\vec{c_2} = \vec{q_1}r_{12} + \vec{q_2}r_{22}\\
-	\label{eq36}r_{21} = \vec{q_1}^Tc_2\\
-	\label{eq37}r_{22} = \norm{\vec{c_2} - \vec{q_{1}}r_{12}}\\
-	\label{eq38}\vec{q_2} = \frac{\vec{c_2} - \vec{q_{1}}r_{12}}{r_22}
+	\label{eq32}\vec{c_1} &= \vec{q_1}r_{11}\\
+	\label{eq33}r_{11} &= \norm{\vec{c_1}} = \sqrt{a^2 + h^2}\\
+	\label{eq34}\vec{q_1} &= \frac{\vec{c_1}}{r_{11}}\\
+	\label{eq35}\vec{c_2} &= \vec{q_1}r_{12} + \vec{q_2}r_{22}\\
+	\label{eq36}r_{21} &= \vec{q_1}^Tc_2\\
+	\label{eq37}r_{22} &= \norm{\vec{c_2} - \vec{q_{1}}r_{12}}\\
+	\label{eq38}\vec{q_2} &= \frac{\vec{c_2} - \vec{q_{1}}r_{12}}{r_22}
 \end{align}
 \subsection{Solution}
 Given,
