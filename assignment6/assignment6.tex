@@ -145,7 +145,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{Matrix theory - Assignment 5}
+\title{Matrix theory - Assignment 6}
 \author{Shreeprasad Bhat\\AI20MTECH14011}
 %\title{}
 % paper title
@@ -229,175 +229,78 @@ columns=fullflexible
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 \begin{abstract}
-This document illustrates solving pair of straight lines using linear algebra
+This document illustrates on how to perform QR decomposition of a matrix
 \end{abstract}
 Download all python codes from 
 %
 \begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes
+https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment6/codes
 \end{lstlisting}
 %
 and latex codes from 
 %
 \begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment5/
+https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment6/
 \end{lstlisting}
 %
 \section{Problem}
-Find the value of h so that the equation
-\begin{equation}\nonumber
-	6x^2 + 2hxy + 12y^2 + 22x + 31y + 20 = 0
+Find QR decomposition for matrix
+\begin{equation}
+	\vec{V} = \myvec{6 & \frac{17}{2}\\ \frac{17}{2} & 12}
 \end{equation}
-may represent two straight lines.
 \section{Construction}
-The general equation second degree is given by
 \begin{equation}\label{eq1}
-	ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0
+	\text{Let } \vec{V} = \myvec{\vec{c_1} & \vec{c_2}} = \myvec{a & h\\h & b}
 \end{equation}
-\eqref{eq1} represents pair of straight lines if
-\begin{equation}\label{eq2}
-	\mydet{ a & h & d\\
-			h & c & e\\
-			d & e & f} = 0
-\end{equation}
+Let $\vec{Q}$ be an orthogonal and $\vec{R}$ be an upper triangular matrix such that, 
+\begin{align}
+	\label{eq2}\vec{V} &= \vec{Q}\vec{R}\\
+	\label{eq3}&= \myvec{\vec{q_1} & \vec{q_2}}\myvec{r_{11} & r_{12}\\0 & r_{22}}\\
+	\label{eq4}\myvec{\vec{c_1} & \vec{c_2}} &= \myvec{\vec{q_1}r_{11} & \vec{q_1}r_{12} + \vec{q_2}r_{22}}
+\end{align}
+\begin{align}
+	\label{eq5}\implies\vec{c_1} &= \vec{q_1}r_{11}\\
+	\label{eq6}r_{11} &= \norm{\vec{c_1}} = \sqrt{a^2 + h^2}\\
+	\label{eq7}\vec{q_1} &= \frac{\vec{c_1}}{r_{11}}\\
+	\label{eq8}\vec{c_2} &= \vec{q_1}r_{12} + \vec{q_2}r_{22}\\
+	\label{eq9}r_{21} &= \vec{q_1}^Tc_2\\
+	\label{eq10}r_{22} &= \norm{\vec{c_2} - \vec{q_{1}}r_{12}}\\
+	\label{eq11}\vec{q_2} &= \frac{\vec{c_2} - \vec{q_{1}}r_{12}}{r_22}
+\end{align}
 \section{Solution}
-From \eqref{eq2}, given equation represents pair of straight lines if 
-\begin{equation}\label{eq3}
-	\mydet{ 6 & h & 11\\
-			h & 12 & \frac{31}{2}\\
-			11 & \frac{31}{2} & 20} = 0
-\end{equation}
-\begin{equation}\label{eq4}
-	\implies h = \frac{17}{2} \text{ or } h = \frac{171}{20}
-\end{equation}
-Verify  \eqref{eq4} using python code from
-\begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/solve_determinant.py
-\end{lstlisting}
-\section{Find equation of pair of straight lines}
-\subsection{Construction}
-The general equation second degree is given by
-\begin{equation}\label{eq5}
-	ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0
-\end{equation}
-Let $(\alpha,\beta)$ be their point of intersection, then
-\begin{equation}\label{eq6}
-	\myvec{ a & h\\ h & b}\myvec{\alpha \\ \beta} = \myvec{-d \\ -e}
-\end{equation}
-Under \textit{Affine transformation},
-\begin{align}
-	\vec{x} &= \vec{M}\vec{y} + c\\
-	\myvec{x \\ y} &= \myvec{1 & 0 \\ 0 & 1} \myvec{X \\ Y} + \myvec{\alpha \\ \beta}\\
-	\label{eq7}\myvec{x \\ y} &= \myvec{X+\alpha \\ Y+\beta}
-\end{align}
-\eqref{eq5} under transformation \eqref{eq7} will become,
-\begin{equation}\label{eq8}
-	aX^2 + 2bXY + cY^2 = 0
-\end{equation}
-\begin{equation}\label{eq9}
-	\myvec{X & Y} \myvec{a & h \\ h & b} \myvec{X \\ Y} = 0
-\end{equation}
-%\begin{equation}\label{eq10}
-%	\vec{X}^T\vec{V}\vec{X} = 0
-%\end{equation}
-\begin{equation}\label{eq11}
-	\myvec{X & Y} \myvec{u_1 & v_1 \\ u_2 & v_2} \myvec{\lambda_1 & 0\\ 0 & \lambda_2} \myvec{u_1 & u_2 \\ v_1 & v_2} \myvec{X \\ Y} = 0
-\end{equation}
-\begin{equation}
-	\myvec{X^\prime & Y^\prime}  \myvec{\lambda_1 & 0\\ 0 & \lambda_2} \myvec{X^\prime \\ Y^\prime} = 0
-\end{equation}
+Given,
 \begin{equation}\label{eq12}
-	\text{where } X^\prime = Xu_1 + Yu_2 \text{ and } Y^\prime = Xv_1 + Yv_2
+	\vec{V} = \myvec{6 & \frac{17}{2}\\ \frac{17}{2} & 12}
 \end{equation}
+From \eqref{eq6},
 \begin{equation}\label{eq13}
-	\implies \lambda_1 (X^\prime)^2 + \lambda_2 (Y^\prime)^2 = 0
+	r_{11} = \sqrt{6^2 + \left(\frac{17}{2}\right)^2} = \frac{\sqrt{433}}{2}
 \end{equation}
-\eqref{eq13} is called \textit{Spectral decomposition} of matrix
-\begin{align}
-	\implies X^\prime &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}Y^\prime\\	
-	u_1X + u_2Y &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}(v_1X + v_2Y)\\
-	\label{eq14}u_1(x-\alpha) + u_2(y-\beta) &= \pm \sqrt{-\frac{\lambda_2}{\lambda_1}}(v_1(x-\alpha) + v_2(y-\beta))
-\end{align}
-\subsection{Solution}
-Given equation is
+Substitute \eqref{eq13} in \eqref{eq7}
+\begin{equation}\label{eq14}
+	\vec{q_1} = \myvec{\frac{12}{\sqrt{433}} \\ \frac{17}{\sqrt{433}}}
+\end{equation}
+Substitute \eqref{eq14} in \eqref{eq9}
 \begin{equation}\label{eq15}
-	6x^2 + 17xy + 12y^2 + 22x + 31y + 20 = 0
+	r_{21} = \frac{306}{\sqrt{433}}
 \end{equation}
-Substituting in \eqref{eq6}
-\begin{align}
-	\label{eq16}\myvec{ 6 & \frac{17}{2}\\\frac{17}{2} & 12}\myvec{\alpha \\ \beta} = \myvec{-11 \\ -\frac{31}{2}} \\
-	\label{eq17}\implies \myvec{\alpha \\ \beta} = \myvec{1 \\ -2}
-\end{align}
-Verify  \eqref{eq17} using python code from
-\begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/find_intersection.py
-\end{lstlisting}
-\subsubsection{Taking $h=\frac{17}{2}$}
-\begin{equation}
-	\text{From \textit{Spectral theorem, }}\vec{V} = \vec{P}\vec{D}\vec{P}^T
+Substitute \eqref{eq10} in \eqref{eq15}
+\begin{equation}\label{eq16}
+	r_{22} = \frac{\sqrt{433}}{866}
 \end{equation}
-\begin{align}
-	\label{eq18}\vec{V} &= \myvec{ 6 & \frac{17}{2}\\ \frac{17}{2} & 12}\\
-	\label{eq19}\vec{P} &= \myvec{\frac{-5\sqrt{13} - 6}{17} & \frac{-6 + 5\sqrt{13}}{17}\\ 1 & 1}\\
-	\label{eq20}\vec{D} &= \myvec{9 - \frac{5\sqrt{13}}{2} & 0\\ 0 & 9 + \frac{5\sqrt{13}}{2}}
-\end{align}
-Verify  \eqref{eq19} and \eqref{eq20} using python code from
-\begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/diagonalize1.py
-\end{lstlisting}
-Substituting \eqref{eq17}, \eqref{eq19} and \eqref{eq20} in \eqref{eq14},
-\begin{multline}\label{eq21}
-	\frac{-5\sqrt{13} - 6}{17}(x+1) + (y-2) \\= \pm \sqrt{-\frac{9 + \frac{5\sqrt{13}}{2}}{9 - \frac{5\sqrt{13}}{2}}}\left(\frac{-6 + 5\sqrt{13}}{17}(x+1) + (y+2)\right)
-\end{multline}
-Simplifying \eqref{eq21},
-\begin{align}
-	\label{eq22}2x + 3y + 4 = 0 \text{ and } 3x + 4y + 5 = 0\\
-	\implies (2x + 3y + 4)(3x + 4y + 5) = 0
-\end{align}
-Verify  \eqref{eq22} using python code from
-\begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/calculate1.py
-\end{lstlisting}
-\renewcommand{\thefigure}{1}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\columnwidth]{fig/figure_1.png}
-	\caption{Pair of straight lines $3x + 4y + 5 = 0$ and $2x + 3y + 4 = 0$}
-	\label{fig:figure1}
-\end{figure}
-\subsubsection{Taking $h=\frac{171}{20}$}
-\begin{equation}
-	\text{From \textit{Spectral theorem, }} \vec{V} = \vec{P}\vec{D}\vec{P}^T
+Substitute \eqref{eq16} in \eqref{eq11}
+\begin{equation}\label{eq17}
+	\vec{q_2} = \myvec{\frac{17}{\sqrt{433}} \\ -\frac{12}{\sqrt{433}}}
 \end{equation}
-\begin{align}
-	\vec{V} &= \myvec{ 6 & \frac{171}{2}\\ \frac{171}{2} & 12}\\
-	\label{eq23}\vec{P} &= \myvec{\frac{-\sqrt{3649} - 20}{57} & \frac{-20 + \sqrt{3649}}{57}}\\
-	\label{eq24}\vec{D} &= \myvec{9 - \frac{3\sqrt{3649}}{20} & 0\\ 0 & 9 + \frac{3\sqrt{3649}}{20}}
-\end{align}
-Verify  \eqref{eq23} and \eqref{eq24} using python code from
+Hence QR decomposition of V is,
+\begin{equation}\label{eq18}
+	\vec{V} = \myvec{\frac{12}{\sqrt{433}} & \frac{17}{\sqrt{433}}\\
+				\frac{17}{\sqrt{433}} & -\frac{12}{\sqrt{433}}}
+			  \myvec{\frac{\sqrt{433}}{2} & \frac{306}{\sqrt{433}}\\
+			  0 & \frac{\sqrt{433}}{866}}
+\end{equation}
+Verify \eqref{eq18} using python code from
 \begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/diagonalize2.py
+https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment6/codes/find_QR_decomposition.py
 \end{lstlisting}
-Substituting \eqref{eq17},\eqref{eq23} and \eqref{eq24} in \eqref{eq14}, 
-\begin{multline}\label{eq25}
-	\frac{-\sqrt{3649} - 20}{57}(x+1) + (y-2) \\= \pm 
-	\sqrt{-\frac{9 + \frac{3\sqrt{3649}}{20}}{9 - \frac{3\sqrt{3649}}{20}}}\\
-	\left(\frac{-20 + \sqrt{3649}}{57}(x+1) + (y+2)\right)
-\end{multline}
-Simplifying \eqref{eq25},
-\begin{align}
-	\label{eq26}2x + 3y + 4 = 0 \text{ and } 3x + 4y + 5 = 0\\
-	\label{eq27}\implies (2x + 3y + 4)(3x + 4y + 5) = 0
-\end{align}
-Verify  \eqref{eq26} using python code from
-\begin{lstlisting}
-https://github.com/shreeprasadbhat/matrix-theory/tree/master/assignment5/codes/calculate2.py
-\end{lstlisting}
-\renewcommand{\thefigure}{2}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\columnwidth]{fig/figure_2.png}
-	\caption{Pair of straight lines $4x + 5y + \frac{20}{3} = 0$ and $5x + 8y + 10 = 0$}
-	\label{fig:figure2}
-\end{figure}
 \end{document}
