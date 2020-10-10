@@ -17,3 +17,6 @@ Ramsey, Problem set : https://github.com/gadepall/school/blob/master/rams/gvv_ra
 
 Linear Algebra Book: Hoffman and Kunze :  
 https://github.com/gadepall/college/blob/master/hoffman/book/Linear%20Algebra%20-%20Kenneth%20Hoffman%20%26%20Ray%20Kunze%20.pdf
+
+dresden :
+https://github.com/gadepall/school/blob/master/dresden/book/solidanalyticalg031938mbp.pdf
