@@ -231,7 +231,11 @@ columns=fullflexible
 \begin{abstract}
 This document illustrates on finding foot of perpendicular from plane using SVD
 \end{abstract}
-Download all latex codes from 
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment7/
+\end{lstlisting}
+and latex-tikz from
 \begin{lstlisting}
 https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment7/
 \end{lstlisting}
@@ -285,12 +289,20 @@ Diagonalize $\vec{M}\vec{M}^T$
 	\label{eq13}&= \myvec{0 & \frac{2}{5} & -\frac{5}{2}\\1 & 0 & 0\\0 & 1 & 1}\myvec{\frac{29}{4} & 0 & 0\\0 & 1 & 0\\0 & 0 & 0}\myvec{0 & 1 & 0\\\frac{2}{5} & 0 & 1\\-\frac{5}{2} & 0 & 1}\\
 	&= \vec{U}\Sigma^T\Sigma\vec{U}^T
 \end{align}
+Verify \eqref{eq13} from,
+\begin{lstlisting}
+codes/diagonalize1.py
+\end{lstlisting}
 Diagonalize $\vec{M}^T\vec{M}$
 \begin{align}
 	\label{e14}\vec{M}^T\vec{M} &= \myvec{1 & 0 & \frac{5}{2}\\0 & 1 & 0}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} = \myvec{\frac{29}{4} & 0\\0 & 1}\\
 	\label{eq15}&= \myvec{0 & 1\\1 & 0}\myvec{1 & 0\\0 & \frac{29}{4}}\myvec{0 & 1\\1 & 0}\\
 	&= \vec{V}\Sigma^T\Sigma\vec{V}^T
 \end{align}
+Verify \eqref{eq15} from,
+\begin{lstlisting}
+codes/diagonalize2.py
+\end{lstlisting}
 Perform SVD on $\vec{M}$,
 \begin{align}
 	\label{eq16}\vec{M} &= \vec{U}\Sigma\vec{V}^T\\
@@ -301,6 +313,10 @@ Perform SVD on $\vec{M}$,
 	\label{eq19}&= \myvec{1 & 0\\0 & 1}\myvec{\frac{\sqrt{29}}{2} & 0 & 0\\0 & 1 & 0}\myvec{0 & 1 & 0\\\frac{2}{5} & 0 & 1\\-\frac{5}{2} & 0 & 1}\\
 	\label{eq20}&=\myvec{\frac{4}{29} & 0 & \frac{10}{29}\\0 & 1 & 0}
 \end{align}
+Verify \eqref{eq20} from,
+\begin{lstlisting}
+codes/pseudo_inverse.py
+\end{lstlisting}
 Substitute \eqref{eq20} in \eqref{eq11},
 \begin{align}
 	\vec{x} = \myvec{\frac{4}{29} & 0 & \frac{10}{29}\\0 & 1 & 0}\myvec{-1\\0\\-1} = \myvec{-\frac{14}{29}\\0} = \myvec{\lambda_1 \\ \lambda_2}
