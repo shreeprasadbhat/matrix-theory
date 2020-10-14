@@ -303,13 +303,11 @@ Verify \eqref{eq15} from,
 \begin{lstlisting}
 codes/diagonalize2.py
 \end{lstlisting}
-Perform SVD on $\vec{M}$,
+Compute SVD of $\vec{M}$ from \eqref{eq13} and \eqref{eq16},
 \begin{align}
 	\label{eq16}\vec{M} &= \vec{U}\Sigma\vec{V}^T\\
-	\label{eq17}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} &= \myvec{0 & \frac{2}{5} & -\frac{5}{2}\\1 & 0 & 0\\0 & 1 & 1}\myvec{\frac{\sqrt{29}}{2} & 0 \\0 & 1\\0 & 0} \myvec{1 & 0\\0 & 1}
-\end{align}
-\begin{align}
-	\label{eq18}M^{+} &= \vec{V}\Sigma^T\vec{U}^T\\
+	\label{eq17}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} &= \myvec{0 & \frac{2}{5} & -\frac{5}{2}\\1 & 0 & 0\\0 & 1 & 1}\myvec{\frac{\sqrt{29}}{2} & 0 \\0 & 1\\0 & 0} \myvec{1 & 0\\0 & 1}\\
+	\label{eq18}\vec{M}^{+} &= \vec{V}\Sigma^T\vec{U}^T\\
 	\label{eq19}&= \myvec{1 & 0\\0 & 1}\myvec{\frac{\sqrt{29}}{2} & 0 & 0\\0 & 1 & 0}\myvec{0 & 1 & 0\\\frac{2}{5} & 0 & 1\\-\frac{5}{2} & 0 & 1}\\
 	\label{eq20}&=\myvec{\frac{4}{29} & 0 & \frac{10}{29}\\0 & 1 & 0}
 \end{align}
