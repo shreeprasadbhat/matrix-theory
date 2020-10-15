@@ -257,29 +257,29 @@ We need to represent equation of plane in parametric form,
 \begin{equation}\label{eq3}
 	\vec{x} = \vec{p} + \lambda_1\vec{q} + \lambda_2\vec{r}
 \end{equation}
-Here $p$ is any point on plane and $\vec{q}, \vec{r}$ are two vectors parallel to plane and hence $\perp$ to $\vec{n}$. Find two vectors that are $\perp$ to $\vec{n}$
+Here $\vec{p}$ is any point on plane and $\vec{q}, \vec{r}$ are two vectors parallel to plane and hence $\perp$ to $\vec{n}$. Find two vectors that are $\perp$ to $\vec{n}$
 \begin{align}\label{eq4}
-	\myvec{5 & 0 &-2}\myvec{a\\b\\c} = 0
+	\implies\myvec{5 & 0 &-2}\myvec{a\\b\\c} = 0
 \end{align}
-Put $a=0$ and $b=1$ in \eqref{eq3}, $\implies c=0$\\
-Put $a=1$ and $b=0$ in \eqref{eq3}, $\implies c=\frac{5}{2}$\\
+Put $a=0$ and $b=1$ in \eqref{eq4}, $\implies c=0$\\
+Put $a=1$ and $b=0$ in \eqref{eq4}, $\implies c=\frac{5}{2}$\\
 Hence $\vec{q} = \myvec{1\\0\\\frac{5}{2}}, \vec{r} = \myvec{0\\1\\0}$\\
 Let us find point $\vec{p}$ on the plane. Put $x=1,y=0$ in \eqref{eq2}, we get $\vec{p} = \myvec{1\\0\\1}$\\
-Since given plane is parallel to y-axis, we can use any point $P$ on y-axis to compute shortest distance. 
+Since given plane is parallel to Y-axis, we can use any point $\vec{P}$ on Y-axis to compute shortest distance. 
 \begin{equation}\label{eq5}
-	\vec{P} = \myvec{0\\0\\0}
+	\text{Let,  } \vec{P} = \myvec{0\\0\\0}
 \end{equation}
-Let $\vec{Q}$ be the point on plane with shortest distance to $\vec{P}$. $\vec{Q}$ can be expressed in \eqref{eq4} form as
+Let $\vec{Q}$ be the point on plane with shortest distance to $\vec{P}$. $\vec{Q}$ can be expressed in \eqref{eq3} form as
 \begin{align}\label{eq6}
 	\vec{Q} = \myvec{1\\0\\1} + \lambda_1\myvec{1\\0\\\frac{5}{2}} + \lambda_2\myvec{0\\1\\0}
 \end{align}
-Equation $\vec{P}$ and $\vec{Q}$, and computing pseudo inverse using SVD should give the value of $\lambda_1$ and $\lambda_2$ (since plane and y-axis never intersect pseudo inverse should give the points which are closest)
+Equate $\vec{P}$ and $\vec{Q}$, and compute $\lambda_1, \lambda_2$ using $\textit{pseudoinverse}$ from $\textit{SVD}$ (since the given plane and Y-axis never intersect, pseudoinverse should give the points which are closest)
 \begin{align}
 	\label{eq7}\myvec{1\\0\\1} + \lambda_1\myvec{1\\0\\\frac{5}{2}} + \lambda_2\myvec{0\\1\\0} &= \myvec{0\\0\\0}\\
 	\label{eq8}\lambda_1\myvec{1\\0\\\frac{5}{2}} + \lambda_2\myvec{0\\1\\0} &= \myvec{-1\\0\\-1}\\
 	\label{eq9}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} \myvec{\lambda_1 \\ \lambda_2} &=\myvec{-1\\0\\-1}\\
 	\label{eq10}\vec{M}\vec{x} &= \vec{b}\\
-	\label{eq11}\vec{x} &= \vec{M}^{+}\vec{b}
+	\label{eq11}\implies\vec{x} &= \vec{M}^{+}\vec{b}
 \end{align}
 where $\vec{M} = \myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0}$, $\vec{x}= \myvec{\lambda_1 \\ \lambda_2}$ and $\vec{b}=\myvec{-1\\0\\-1}$\\
 \\
@@ -296,14 +296,14 @@ codes/diagonalize1.py
 Diagonalize $\vec{M}^T\vec{M}$
 \begin{align}
 	\label{e14}\vec{M}^T\vec{M} &= \myvec{1 & 0 & \frac{5}{2}\\0 & 1 & 0}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} = \myvec{\frac{29}{4} & 0\\0 & 1}\\
-	\label{eq15}&= \myvec{0 & 1\\1 & 0}\myvec{1 & 0\\0 & \frac{29}{4}}\myvec{0 & 1\\1 & 0}\\
+	\label{eq15}&= \myvec{1 & 0\\0 & 1}\myvec{\frac{29}{4} & 0\\0 & 1}\myvec{1 & 0\\0 & 1}\\
 	&= \vec{V}\Sigma^T\Sigma\vec{V}^T
 \end{align}
 Verify \eqref{eq15} from,
 \begin{lstlisting}
 codes/diagonalize2.py
 \end{lstlisting}
-Compute SVD of $\vec{M}$ from \eqref{eq13} and \eqref{eq16},
+Compute $\textit{SVD}$ of $\vec{M}$ from \eqref{eq13} and \eqref{eq16},
 \begin{align}
 	\label{eq16}\vec{M} &= \vec{U}\Sigma\vec{V}^T\\
 	\label{eq17}\myvec{1 & 0\\0 & 1\\\frac{5}{2} & 0} &= \myvec{0 & \frac{2}{5} & -\frac{5}{2}\\1 & 0 & 0\\0 & 1 & 1}\myvec{\frac{\sqrt{29}}{2} & 0 \\0 & 1\\0 & 0} \myvec{1 & 0\\0 & 1}\\
@@ -327,8 +327,8 @@ Distance between point $\vec{P}$ and $\vec{Q}$ is
 \begin{align}
 	\norm{\vec{P}-\vec{Q}} = \sqrt{\left(\frac{15}{29}\right)^2 + 0 + \left(-\frac{6}{29}\right)^2} = \frac{3}{\sqrt{29}}
 \end{align}
-Hence, distance from y-axis to $5x - 2z - 3 = 0$ is $\frac{3}{\sqrt{29}}$.\\\\
-Verifying solution to \eqref{eq10} by least squares method
+Hence, distance from Y-axis to $5x - 2z - 3 = 0$ is $\frac{3}{\sqrt{29}}$.\\\\
+Verifying solution to \eqref{eq10} with $\textit{least squares}$ method
 \begin{align}
 	\vec{M}^T(\vec{b} - \vec{M}\vec{x}) &= 0\\
 	\label{eq30}\implies \vec{M}^T\vec{M}\vec{x} &= \vec{M}^T\vec{b}
@@ -340,7 +340,7 @@ Substituting $\vec{M}, \vec{b}$ from \eqref{eq9} in \eqref{eq30}
 	\implies\frac{29}{4}\lambda_1 &= -\frac{7}{2}\\
 	\lambda_1 &= -\frac{7}{2} \times \frac{4}{29} = -\frac{14}{29}\\
 	\text{and }\lambda_2 &= 0\\
-	\label{31}\vec{x} &= \myvec{-\frac{14}{29}\\0}
+	\label{31}\implies\vec{x} &= \myvec{-\frac{14}{29}\\0}
 \end{align}
 Comparing \eqref{23} and \eqref{31} solution is verified.
 \end{document}
