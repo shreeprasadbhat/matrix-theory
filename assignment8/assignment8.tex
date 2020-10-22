@@ -276,10 +276,21 @@ Hence $A$ is row equivalent to $I_2$ and so $A$ is invertible and so \eqref{2} h
 Hence $span\{ \vec{u}$,$\vec{v} \}$ = W = $\mathbb{R}^2$, and so the only subspace of $\mathbb{R}^2$ are ${\vec{0}}$, $\mathbb{R}^2$, and $L = {c\vec{u} : \vec{u} \neq 0, c \in \mathbb{R}}$.
 \\
 \item
-Origin and $\mathbb{R}^3$ itself are trivial subspaces of $\mathbb{R}^3$.\\
-\\
-Every line through origin is a subspace of $\mathbb{R}^3$.\\
-\\
-The other subspaces of $\mathbb{R}^3$ are the planes passing through the origin.
+\begin{enumerate}[label=\arabic*.]
+\item
+Origin is a trivial subspace of $\mathbb{R}^3$.\\
+\item
+$\mathbb{R}^3$ itself is a trivial subspace of $\mathbb{R}^3$.\\
+\item
+Every line through origin is subspace of $\mathbb{R}^3$.\\
+\item
+Every plane in $\mathbb{R}^3$ passing through origin is a subspace $\mathbb{R}^3$.\\
+\textit{Proof : }
+Let $W$ be a plane passing through origin. We need $\vec{0} \in  W$, but we have that since we’re only considering planes that contain origin. Next, we need $W$ is closed under vector addition. If $\vec{w_1}$ and $\vec{w_2}$ both belong to $W$, then so does $\vec{w_1} + \vec{w_2}$ because it’s found by constructing a parallelogram, and the whole parallelogram lies in the plane $W$. Finally, we need $W$ is closed under
+scalar products, but it is since scalar multiples lie in a straight line through the origin, and that line lies in $W$. Thus, each plane $W$ passing through the origin is a subspace of $\mathbb{R}^3$.\\
+\item
+The intersection of any of the above subspaces will also be a subspace of $\mathbb{R}^3$\\
+\end{enumerate}
+These 5 are only subspaces possible in $\mathbb{R}^3$
 \end{enumerate}
 \end{document}
