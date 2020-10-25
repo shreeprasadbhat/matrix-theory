@@ -239,7 +239,37 @@ https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment9/
 \section{Problem}
 Let $\vec{V}$ be the space of $n \times 1$ matrices over $F$ and let $\vec{W}$ be the space of $m \times 1$ matrices over $F$. Let $\vec{A}$ be a fixed $m \times n$ matrix over $F$ and let $T$ be the linear transformation from $\vec{V}$ into $\vec{W}$ defined by $T(X) = \vec{A}\vec{X}$. Prove that $T$ is the zero transformation if and only if $\vec{A}$ is the zero matrix.
 \section{Proof}
-If $\vec{A}$ is a zero transformation, then $\vec{A}\vec{X} = 0$ where $\vec{X}$ can take any value. Let's take $\vec{X_j}$ as vector with jth entry $1$ and remaining $0$. Now $\vec{A}{X_j} = 0 \implies \vec{A_j} = 0$. Since $\vec{A_j} = 0$, for j=1,2,...n in the linear transformation $\vec{A}\vec{X} = 0$, $\vec{A}$ is zero matrix.\\
+If $\vec{A}$ is a zero transformation, then 
+\begin{equation}\label{eq1}
+	\vec{A}\vec{X} = 0	
+\end{equation}
+Let,
+\begin{align}
+	\label{eq2}\vec{A} &= \myvec{\vec{A_1} & \dots & \vec{A_j} & \dots & \vec{A_n}} \text{ and }\\
+	\label{eq3}\vec{X_j} &= \myvec{x_1\\ \vdots \\x_j\\ \vdots\\x_n}, \text{ where }
+	x_i = 
+	\begin{cases}
+		1 & \text{if $i=j$}\\
+		0 & \text{otherwise}
+	\end{cases}
+\end{align}
+Consider,
+\begin{align}
+	\label{eq4}\vec{A}{X_j} &= 0\\
+	\label{eq5}\myvec{\vec{A_1}\dots\vec{A_j}\dots\vec{A_n}}
+	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= 0\\
+	\label{eq6}\implies \vec{A_j} &= 0 \text{ for $j=1,2,...n$}\\
+	\label{eq7}\implies \vec{A} &= 0
+\end{align}
+Hence $\vec{A}$ is zero matrix.\\
 \\
-Let us assume $\vec{A}$ is a zero matrix, then $0.\vec{X} = 0, \forall \vec{X} \in F$. Hence the if $\vec{A}$ is zero matrix, linear transformation $T(X) = \vec{A}\vec{X}$ is the zero transformation.
+Let us assume $\vec{A}$ is a zero matrix
+\begin{align}
+	\label{eq8}\vec{A} &= 0\\
+	\label{eq9}T(X) = \vec{A}\vec{X} &= 0.\vec{X}\\ 
+	\label{eq10}&= 0, \forall \vec{X} \in F
+\end{align}
+Hence $T(X) = \vec{A}\vec{X}$ is the zero transformation.\\
+\\
+From \eqref{eq7} and \eqref{eq10} it is proved that T is the zero transformation if and only if $\vec{A}$ is the zero matrix.
 \end{document}
