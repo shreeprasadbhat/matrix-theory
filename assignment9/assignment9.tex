@@ -245,7 +245,7 @@ If $\vec{A}_{m \times n}$ is a zero transformation and $\vec{X}_{n \times 1}$ is
 \end{equation}
 Let,
 \begin{align}
-	\label{eq2}\vec{A} &= \myvec{\vec{A_1} & \dots & \vec{A_j} & \dots & \vec{A_n}} \text{ and }\\
+	\label{eq2}\vec{A} &= \myvec{\vec{A_1} & \dots & \vec{A_j} & \dots & \vec{A_n}}_{1\times n} \text{ and }\\
 	\label{eq3}\vec{X_j} &= \myvec{x_1\\ \vdots \\x_j\\ \vdots\\x_n}, \text{ where }
 	x_i = 
 	\begin{cases}
@@ -257,9 +257,15 @@ If $\vec{A}_{m \times n}$ is zero transformation, then for any vector $\vec{X}_{
 \begin{align}
 	\label{eq4}\vec{A}{\vec{X_j}} &= \vec{0}_{m \times 1}\\
 	\label{eq5}\myvec{\vec{A_1}\dots\vec{A_j}\dots\vec{A_n}}
-	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= \vec{0}_{m \times 1}\\
-	\label{eq6}\implies \vec{A_j} &= \vec{0}_{m\times1} \text{ for $j=1,2,...n$}\\
-	\implies\vec{A} &= \myvec{\vec{0}_{m \times 1} & \vec{0}_{m \times 1} & \dots & \vec{0}_{m \times 1}}\\
+	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= \vec{0}_{m \times 1}
+\end{align}
+From \eqref{eq3} and \eqref{eq5}
+\begin{align}
+	\label{eq6}\vec{A_j} &= \vec{0}_{m\times1} \text{ for $j=1,2,...n$}
+\end{align}
+Substitute \eqref{eq6} in \eqref{eq2}
+\begin{align}
+	\vec{A} &= \myvec{\vec{0}_{m \times 1} & \vec{0}_{m \times 1} & \dots & \vec{0}_{m \times 1}}_{1 \times n}\\
 	\label{eq7}\therefore \vec{A} &= \vec{0}_{m \times n}
 \end{align}
 Hence $\vec{A}$ is zero matrix.\\
