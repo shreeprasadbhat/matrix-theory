@@ -237,11 +237,11 @@ https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment9/
 \end{lstlisting}
 %
 \section{Problem}
-Let $\vec{V}$ be the space of $n \times 1$ matrices over $F$ and let $\vec{W}$ be the space of $m \times 1$ matrices over $F$. Let $\vec{A}$ be a fixed $m \times n$ matrix over $F$ and let $T$ be the linear transformation from $\vec{V}$ into $\vec{W}$ defined by $T(X) = \vec{A}\vec{X}$. Prove that $T$ is the zero transformation if and only if $\vec{A}$ is the zero matrix.
+Let $\vec{V}$ be the space of $n \times 1$ matrices over $F$ and let $\vec{W}$ be the space of $m \times 1$ matrices over $F$. Let $\vec{A}$ be a fixed $m \times n$ matrix over $F$ and let $T$ be the linear transformation from $\vec{V}$ into $\vec{W}$ defined by $T(\vec{X}) = \vec{A}\vec{X}$. Prove that $T$ is the zero transformation if and only if $\vec{A}$ is the zero matrix.
 \section{Proof}
-If $\vec{A}$ is a zero transformation, then 
+If $\vec{A}_{m \times n}$ is a zero transformation and $\vec{X}_{n \times 1}$ is a vector, then 
 \begin{equation}\label{eq1}
-	\vec{A}\vec{X} = 0	
+	\vec{A}\vec{X} = \vec{0}_{m \times n}	
 \end{equation}
 Let,
 \begin{align}
@@ -253,24 +253,28 @@ Let,
 		0 & \text{otherwise}
 	\end{cases}
 \end{align}
-Since $\vec{A}$ is zero transformation, for any $n\times1$ vector $\vec{X}$, $\vec{A}\vec{X} = 0$. Consider ,
+If $\vec{A}_{m \times n}$ is zero transformation, then for any vector $\vec{X}_{n \times 1}$, $\vec{A}\vec{X} = \vec{0}$.\\ Consider ,
 \begin{align}
-	\label{eq4}\vec{A}{\vec{X_j}} &= 0\\
+	\label{eq4}\vec{A}{\vec{X_j}} &= \vec{0}_{m \times n}\\
 	\label{eq5}\myvec{\vec{A_1}\dots\vec{A_j}\dots\vec{A_n}}
-	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= 0\\
-	\label{eq6}\implies \vec{A_j} &= 0 \text{ for $j=1,2,...n$}\\
-	\implies\vec{A} &= \myvec{0 & 0 & \dots & 0}\\
-	\label{eq7}\therefore \vec{A} &= 0
+	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= \vec{0}_{m \times n}\\
+	\label{eq6}\implies \vec{A_j} &= \vec{0}_{m\times1} \text{ for $j=1,2,...n$}\\
+	\implies\vec{A} &= \myvec{\vec{0}_{m \times 1} & \vec{0}_{m \times 1} & \dots & \vec{0}_{m \times 1}}\\
+	\label{eq7}\therefore \vec{A} &= \vec{0}_{m \times n}
 \end{align}
 Hence $\vec{A}$ is zero matrix.\\
 \\
-Let us assume $\vec{A}$ is a zero matrix
+Let us assume $\vec{A}_{m \times n}$ is a zero matrix
 \begin{align}
-	\label{eq8}\vec{A} &= 0\\
-	\label{eq9}T(X) = \vec{A}\vec{X} &= 0.\vec{X}\\ 
-	\label{eq10}&= 0, \forall \vec{X} \in F
+	\label{eq8}\vec{A} = \vec{0}_{m \times n}
 \end{align}
-Hence $T(X) = \vec{A}\vec{X}$ is the zero transformation.\\
+Then,
+\begin{align}
+	\label{eq9}T(\vec{X}) &= \vec{A}\vec{X}\\
+	&= \vec{0}.\vec{X}\\ 
+	\label{eq10}&= \vec{0}_{m \times n}\text{     ,  }\forall \vec{X} \in F
+\end{align}
+Hence $T(\vec{X}) = \vec{A}\vec{X}$ is the zero transformation.\\
 \\
 From \eqref{eq7} and \eqref{eq10} it is proved that T is the zero transformation if and only if $\vec{A}$ is the zero matrix.
 \end{document}
