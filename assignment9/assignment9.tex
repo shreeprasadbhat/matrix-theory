@@ -253,13 +253,14 @@ Let,
 		0 & \text{otherwise}
 	\end{cases}
 \end{align}
-Consider,
+Since $\vec{A}$ is zero transformation, for any $n\times1$ vector $\vec{X}$, $\vec{A}\vec{X} = 0$. Consider ,
 \begin{align}
-	\label{eq4}\vec{A}{X_j} &= 0\\
+	\label{eq4}\vec{A}{\vec{X_j}} &= 0\\
 	\label{eq5}\myvec{\vec{A_1}\dots\vec{A_j}\dots\vec{A_n}}
 	\myvec{x_1\\\vdots\\x_j\\\vdots\\x_n} &= 0\\
 	\label{eq6}\implies \vec{A_j} &= 0 \text{ for $j=1,2,...n$}\\
-	\label{eq7}\implies \vec{A} &= 0
+	\implies\vec{A} &= \myvec{0 & 0 & \dots & 0}\\
+	\label{eq7}\therefore \vec{A} &= 0
 \end{align}
 Hence $\vec{A}$ is zero matrix.\\
 \\
