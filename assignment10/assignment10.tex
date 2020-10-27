@@ -238,8 +238,18 @@ https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment10/
 %
 \section{Problem}
 Let $\vec{A}$ be an $m \times n$ matrix with entries in $F$ and let $T$ be the linear transformation from $F^{n \times1 }$ into $F^{m \times l}$ defined by $T(\vec{X}) = \vec{A}\vec{X}$. Show that if $m < n$ it may happen that $T$ is onto without being non-singular. Similarly, show that if $m>n$ we may have $T$ non-singular but not onto.
+\section{Definition}
+A linear transformation $T(\vec{X}):V\rightarrow V$ is said to be $\textit{singular}$ if $\exists$ some $\vec{X} \in V$ s.t
+\begin{align}
+	T(\vec{X}) &= \vec{0} \text{ and } \vec{X} \neq \vec{0}\\
+	\text{i.e } Null(T) &\neq \phi
+\end{align}
+A linear transformation $T(\vec{X}):V\rightarrow V$ is said to be $\textit{non-singular}$ if $\exists$ some $\vec{X} \in V$ s.t
+\begin{align}
+	T(\vec{X}) &= \vec{0} \implies \vec{X} = \vec{0}\\
+	\text{i.e } Null(T) &= \phi
+\end{align}
 \section{Solution}
-A linear transformation is called \textit{singular} if it has non-zero nullity, that is it's nullspace contains atleast one non-zero vector, otherwise it is called \textit{non-singular}.\\
 \begin{enumerate}
 	\item
 	if $m<n$\\
@@ -256,7 +266,7 @@ A linear transformation is called \textit{singular} if it has non-zero nullity, 
 	\begin{equation}
 		\textit{dim Null}(\vec{A}) \neq 0
 	\end{equation}
-	$\therefore$ $T(\vec{X})$ is not a non-singular transformation.\\
+	$\therefore$ By definition $T(\vec{X})$ is a singular transformation.\\
 	\\
 	Hence if $m<n$ it may happen that $T$ is onto without being non-singular.
 	\\ 
