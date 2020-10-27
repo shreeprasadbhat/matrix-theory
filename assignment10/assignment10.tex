@@ -249,6 +249,10 @@ A linear transformation $T(\vec{X}):V\rightarrow V$ is said to be $\textit{non-s
 	T(\vec{X}) &= \vec{0} \implies \vec{X} = \vec{0}\\
 	\text{i.e } Null(T) &= \phi
 \end{align}
+A linear transformation $T(\vec{X}) : F^{n\times 1} \rightarrow F^{m\times 1}$ is said to be $onto$ if
+\begin{equation}
+	\textit{dim Col(T)} \leq n
+\end{equation} 
 \section{Solution}
 \begin{enumerate}
 	\item
@@ -272,7 +276,7 @@ A linear transformation $T(\vec{X}):V\rightarrow V$ is said to be $\textit{non-s
 	\\ 
 	\item
 	if $m>n$\\
-	\begin{equation}
+	\begin{equation}\label{eq4}
 		\implies \textit{dim col}(\vec{A}) > n
 	\end{equation}
 	Assume $\vec{A}$ is not singular.
@@ -282,14 +286,14 @@ A linear transformation $T(\vec{X}):V\rightarrow V$ is said to be $\textit{non-s
 		\implies \vec{X} &= \vec{0}
 	\end{align}
 	Hence T(X) may be a non-singular.
-	\begin{equation}\label{eq3}
+	\begin{equation}\label{eq5}
 		\implies \textit{dim Null}(\vec{A}) = 0
 	\end{equation}
 	But Rank-Nullity Theorem is not satisfied,
-	\begin{align}\label{eq4}
+	\begin{align}\label{eq6}
 		\because \textit{dim Col}(\vec{A}) + \textit{dim Null}(\vec{A}) \neq n
 	\end{align}
-	From \eqref{eq4}, we can say $T(\vec{X})$ do not span $F_{m \times 1}$ and $T(\vec{X})$ is not onto.\\ 
+	From \eqref{eq4} and \eqref{eq6}, we can say $T(\vec{X})$ do not span $F^{m \times 1}$ and $T(\vec{X})$ is not onto.\\ 
 	\\
 	Hence if $m>n$ it may have that $T$ is non-singular but not onto.
 \end{enumerate}
