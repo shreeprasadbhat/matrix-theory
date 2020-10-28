@@ -10,6 +10,7 @@
 
 \usepackage[cmex10]{amsmath}
 \usepackage{amsthm}
+\usepackage{adjustbox}
 
 \usepackage{mathrsfs}
 \usepackage{txfonts}
@@ -245,46 +246,57 @@ if $m < n$ it may happen that $T$ is onto without being non-singular
 if $m>n$ we may have $T$ non-singular but not onto.
 \\
 \end{enumerate}
+
 \section{Definitions}
-A linear transformation $T(\vec{X}):\mathbb{V}\rightarrow \mathbb{V}$ is said to be $\textit{singular}$ if $\exists$ some $\vec{X} \in \mathbb{V}$ s.t
-\begin{align}
-	T(\vec{X}) = \vec{0} \text{ and } \vec{X} &\neq \vec{0}\\
-	\text{i.e } Nullity(T) &\neq 0
-\end{align}
-\\
-A linear transformation $T(\vec{X}):\mathbb{V}\rightarrow \mathbb{V}$ is said to be $\textit{non-singular}$ if $\exists$ some $\vec{X} \in \mathbb{V}$ s.t
-\begin{align}
-	T(\vec{X}) = \vec{0} \implies \vec{X} &= \vec{0}\\
-	\text{i.e } Nullity(T) &= 0
-\end{align}
-\\
-A linear transformation $T(\vec{X}) : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be $onto$ if for every  $\vec{b} \in \mathbb{R}^{m}$, $T(\vec{X})=\vec{b}$ has atleast one solution $\vec{X} \in \mathbb{R}^{n}$
-\begin{align}
-	\text{i.e } \textit{Rank(T)} &= m \text{ \& }\\
-	\textit{Rank(T)} &\leq n
-\end{align}
-\\\\\\
-\section{Solution}
-\begin{table}[p]
+\begin{table}[hp]
 	\begin{center}
-		\begin{tabular}{|c|c|}			
+		\begin{tabular}{|c|c|}
 			\hline
-			\multicolumn{2}{|c|}{{Let $\vec{A}$ be an $m \times n$ matrix with entries in $F$ and let $T$ be the linear transformation }}\\
-			\multicolumn{2}{|c|}{{from $F^{n \times1 }$ into $F^{m \times l}$ defined by $T(\vec{X}) = \vec{A}\vec{X}$}}\\
+			\multicolumn{2}{|c|}{A linear transformation $T(\vec{X}) : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be}\\
 			\hline
-			\multicolumn{1}{|c|}{$m < n$} & \multicolumn{1}{c|}{$m > n$}\\
+			\multirow{3}{*}{singular} & if $\exists$ some $\vec{X} \in \mathbb{R}^m$ s.t\\
+			& \vbox{\begin{equation} \nonumber T(\vec{X}) = \vec{0} \text{ and } \vec{X} \neq \vec{0}\end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \text{i.e } Nullity(T) \neq 0 \end{equation}}\\
 			\hline
-			\vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber\implies rank(\vec{A}) > n\end{equation}}\\
-			Hence $T(\vec{X})$ can be onto. & $\text{If }T(\vec{X}) = \vec{0}, \vec{A}\vec{X} = \vec{0} \implies \vec{X} = \vec{0}$\\
-			 &  Hence T(X) may be a non-singular.\\
-			 &  \vbox{\begin{equation}\nonumber \implies Nullity(\vec{A}) = 0\end{equation}}\\
-			 From Rank-Nullity Theorem, &  But Rank-Nullity Theorem is not satisfied,\\
-			 \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) = n\end{equation}} &  \vbox{\begin{equation}\nonumber \because Rank(\vec{A}) + Nullity(\vec{A}) > n.\end{equation}}\\
-			 $\implies Nullity(\vec{A}) \neq 0$ & $\implies$ $T(\vec{X})$ do not span $F^{m \times 1}.$\\
-			 & \\
-			$\therefore$ $T(\vec{X})$ is a singular. & $\therefore$ $T$ is not onto.\\
+			\multirow{3}{*}{non-singular} & if $\exists$ some $\vec{X} \in \mathbb{R}^m$ s.t\\
+			& \vbox{\begin{equation} \nonumber T(\vec{X}) = \vec{0} \implies \vec{X} = \vec{0}\end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \text{i.e } Nullity(T) = 0 \end{equation}}\\
+			\hline			
+			\multirow{3}{*}{onto} & if for every  $\vec{b} \in \mathbb{R}^{m}$,\\
+			& $T(\vec{X})=\vec{b}$ has atleast one solution $\vec{X} \in \mathbb{R}^{n}$\\
+			& \vbox{\begin{equation} \nonumber \text{i.e } \textit{Rank(T)} = m \text{ \& } \end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \textit{Rank(T)} \leq n \end{equation}}\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\pagebreak
+\section{Solution}
+\pagebreak
+\begin{table}[hp]
+	\begin{center}
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|c|c|c|}			
+			\hline
+			\multicolumn{3}{|c|}{Let $\vec{A}$ be an $m \times n$ matrix with entries in $F$ and}\\
+			\multicolumn{3}{|c|}{let $T$ be the linear transformation from $F^{n \times1 }$ into $F^{m \times l}$}\\
+			\multicolumn{3}{|c|}{defined by $T(\vec{X}) = \vec{A}\vec{X}$. If,}\\			
+			\hline
+			& \multicolumn{1}{|c|}{$m < n$} & \multicolumn{1}{c|}{$m > n$}\\
+			\hline
+			\multirow{4}{*}{singular} & \vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber\implies rank(\vec{A}) > n\end{equation}}\\
+			& From Rank-Nullity Theorem, & $\text{If }T(\vec{X}) = \vec{0}, \vec{A}\vec{X} = \vec{0}$\\
+			& \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) = n\end{equation}} & $\implies \vec{X} = \vec{0}$\\
+			& $\implies Nullity(\vec{A}) \neq 0$ & Hence T(X) is non-singular.\\
+			& $\therefore$ $T(\vec{X})$ is a singular. & \vbox{\begin{equation}\nonumber \implies Nullity(\vec{A}) = 0\end{equation}}\\
+			\hline
+			\multirow{4}{*}{onto} & \vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) > n.\end{equation}}\\
+			& Hence $T(\vec{X})$ can be onto. & Rank-Nullity Theorem is,\\
+			& & $T(\vec{X})$ do not span $F^{m \times 1}.$\\
+			&  & $\therefore$ $T$ is not onto.\\
 			\hline
 			\end{tabular}
+			\end{adjustbox}
 	\end{center}
 \end{table}
 \end{document}
