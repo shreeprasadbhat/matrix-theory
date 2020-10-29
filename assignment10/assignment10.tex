@@ -259,21 +259,26 @@ if $m>n$ we may have $T$ non-singular but not onto.
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
-			\multicolumn{2}{|c|}{A linear transformation $T(\vec{X}) : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be}\\
+			\multirow{3}{*}{singular} &\\
+			& A linear transformation $T : \mathbb{R}^{n} \rightarrow \mathbb{R}^{n}$ is said to be singular if $\exists$ some non-zero $\vec{X} \in \mathbb{R}^n$\\
+			& s.t $\vec{A}\vec{X} = \vec{0}$ $\text{ i.e } Nullity(A) \neq 0$. \\
+			& \\
+			& From rank-nullity theorem we can say $rank(A)<n$\\
+			& \\
 			\hline
-			\multirow{3}{*}{singular} & if $\exists$ some $\vec{X} \in \mathbb{R}^m$ s.t\\
-			& \vbox{\begin{equation} \nonumber T(\vec{X}) = \vec{0} \text{ and } \vec{X} \neq \vec{0}\end{equation}}\\
-			& \vbox{\begin{equation} \nonumber \text{i.e } Nullity(T) \neq 0 \end{equation}}\\
-			\hline
-			\multirow{3}{*}{non-singular} & if $\exists$ some $\vec{X} \in \mathbb{R}^m$ s.t\\
-			& \vbox{\begin{equation} \nonumber T(\vec{X}) = \vec{0} \implies \vec{X} = \vec{0}\end{equation}}\\
-			& \vbox{\begin{equation} \nonumber \text{i.e } Nullity(T) = 0 \end{equation}}\\
+			\multirow{3}{*}{non-singular} & \\
+			& A linear transformation $T : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be non-singular if $\vec{A}\vec{X} = \vec{0} \text{ implies } \vec{X} = \vec{0}$\\
+			& $\text{ i.e } Nullity(A) = 0$\\
+			& \\
 			\hline			
-			\multirow{3}{*}{onto} & if for every  $\vec{b} \in \mathbb{R}^{m}$, $T(\vec{X})=\vec{b}$\\
-			& has atleast one solution $\vec{X} \in \mathbb{R}^{n}$ $\text{ and } m\leq n$\\
-			& \vbox{\begin{equation} \nonumber \text{i.e } dim(Col(T)) = m \implies\textit{Rank(T)} = m \end{equation}}\\
-			& If $m>n$, then $T(\vec{X})=\vec{b}$ will not have solution \\
-			& becuase Rank-Nullity theorem is not satisfied.\\
+			\multirow{3}{*}{onto} & \\
+			& A linear transformation $T : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$, $m\leq n$ is said to be onto if for every  $\vec{b} \in \mathbb{R}^{m}$,\\
+			&  $\vec{A}\vec{X} =\vec{b}$ has atleast one solution $\vec{X} \in \mathbb{R}^{n}$..\\
+			& \\
+			& i.e $dim(Col(\vec{A})) = m$ or $Rank(\vec{A}) = m$\\
+			& \\
+			& If $m>n$, then $\vec{A}\vec{X}=\vec{b}$ has no solution because rank-nullity theorem is not satisfied.\\
+			& \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -293,21 +298,20 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			& \multicolumn{1}{|c|}{$m < n$} & \multicolumn{1}{c|}{$m > n$}\\
 			\hline
 			\multirow{4}{*}{singular} & &\\
-			& Since $rank(\vec{A})<n$, from Rank-Nullity Theorem, & Consider an singular $T$ such that $rank(\vec{A}) > n$\\
-			& $Rank(\vec{A}) + Nullity(\vec{A}) = n$, $\implies Nullity(\vec{A}) \neq 0$ & \\
-			& $\therefore$ $T(\vec{X})$ is singular. & \\
+			& Since $rank(\vec{A})<n$, by definition T is singular & Consider an non-singular $T$ such that $rank(\vec{A}) > n$\\
 			&  & \\
 			\hline
 			\multirow{3}{*}{onto} & &\\
-			& Since $m<n$ by definition $T$ can be onto & Since $m>n$ by definition $T$ is not onto.\\
+			& Since $m<n$, by definition $T$ can be onto & Since $m>n$, by definition $T$ is not onto.\\
 			& &\\
 			\hline
 			\end{tabular}
 			\end{adjustbox}
 	\end{center}
 \end{table}
-\section{Example}
-Below is an example in which linear transformation is both onto and singular.
+
+\section{Examples}
+\subsection{$m<n$}
 \begin{align}
 	\text{Let, }T:\mathbb{R}^3 \rightarrow &\mathbb{R}^2\\
 	T(\vec{X}) = \vec{A}\vec{X} &= \vec{b}\\
@@ -316,7 +320,7 @@ Below is an example in which linear transformation is both onto and singular.
 	\implies \vec{A}\vec{X} &= \myvec{1 & 1 & 0\\0 & 1 & 1}\myvec{2\\4\\1}\\
 	&= \myvec{6\\5}
 \end{align}
-Since $Rank(\vec{A})=2$ and $Rank(\vec{A})<3$, T is onto.
+Hence T is onto.
 \begin{align}
 	\text{Consider, } \vec{X} &= \myvec{1\\-1\\1}\\
 	\implies \vec{A}\vec{X} &= \myvec{1 & 1 & 0\\0 & 1 & 1}\myvec{1\\-1\\1}\\
@@ -325,4 +329,16 @@ Since $Rank(\vec{A})=2$ and $Rank(\vec{A})<3$, T is onto.
 Since $\exists \quad \vec{X} \neq \vec{0}$ such that $\vec{A}\vec{X} = \vec{0}$, T is singular.\\
 \\
 $\therefore$ T is both onto and singular.
+\pagebreak
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\subsection{$m>n$}
+\begin{align}
+	\text{Let, }T:\mathbb{R}^3 \rightarrow &\mathbb{R}^2\\
+	T(\vec{X}) = \vec{A}\vec{X} &= \vec{b}\\
+	\text{Let, }\vec{A} &= \myvec{1 & 0\\0 & 1\\1 & 0}\\
+	\text{Consider, }\vec{X} &= \myvec{-1\\2}\\
+	\implies \vec{A}\vec{X} &= \myvec{1 & 0\\0 & 1\\1 & 0}\myvec{-1\\2}\\
+	&= \myvec{-1\\2\\-1}\\
+\end{align}
+$\therefore$ T is not onto, and is also non-singular.
 \end{document}
