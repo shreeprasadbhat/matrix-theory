@@ -7,7 +7,13 @@
 
 \usepackage{graphicx}
 \graphicspath{{./fig/}}
-
+\usepackage{afterpage}
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
 \usepackage[cmex10]{amsmath}
 \usepackage{amsthm}
 \usepackage{adjustbox}
@@ -204,6 +210,7 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+
 %\renewcommand{\theequation}{\theenumi}
 %\begin{abstract}
 %%\boldmath
@@ -264,15 +271,15 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			\hline			
 			\multirow{3}{*}{onto} & if for every  $\vec{b} \in \mathbb{R}^{m}$,\\
 			& $T(\vec{X})=\vec{b}$ has atleast one solution $\vec{X} \in \mathbb{R}^{n}$\\
-			& \vbox{\begin{equation} \nonumber \text{i.e } \textit{Rank(T)} = m \text{ \& } \end{equation}}\\
-			& \vbox{\begin{equation} \nonumber \textit{Rank(T)} \leq n \end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \text{i.e } dim(Col(T)) = m \implies\textit{Rank(T)} = m \end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \text{and, } \textit{Rank(T)} \leq n \end{equation}}\\
 			\hline
 		\end{tabular}
 	\end{center}
 \end{table}
 \pagebreak
+\myemptypage
 \section{Solution}
-\pagebreak
 \begin{table}[hp]
 	\begin{center}
 	\begin{adjustbox}{width=1\textwidth}
@@ -299,4 +306,23 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			\end{adjustbox}
 	\end{center}
 \end{table}
+\section{Example}
+Below is an example in which linear transformation is both onto and singular.
+\begin{align}
+	\text{Let, }T:\mathbb{R}^3 \rightarrow &\mathbb{R}^2\\
+	T(\vec{X}) = \vec{A}\vec{X} &= \vec{b}\\
+	\text{Let, }\vec{A} &= \myvec{1 & 1 & 0\\0 & 1 & 1}\\
+	\text{Consider, }\vec{X} &= \myvec{2\\4\\1}\\
+	\implies \vec{A}\vec{X} &= \myvec{1 & 1 & 0\\0 & 1 & 1}\myvec{2\\4\\1}\\
+	&= \myvec{6\\5}
+\end{align}
+Since $Rank(\vec{A})=2$ and $Rank(\vec{A})<3$, T is onto.
+\begin{align}
+	\text{Consider, } \vec{X} &= \myvec{1\\-1\\1}\\
+	\implies \vec{A}\vec{X} &= \myvec{1 & 1 & 0\\0 & 1 & 1}\myvec{1\\-1\\1}\\
+	&= \vec{0}
+\end{align}
+Since $\exists \quad \vec{X} \neq \vec{0}$ such that $\vec{A}\vec{X} = \vec{0}$, T is singular.\\
+\\
+$\therefore$ T is both onto and singular.
 \end{document}
