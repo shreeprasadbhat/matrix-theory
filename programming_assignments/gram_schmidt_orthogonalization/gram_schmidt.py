@@ -19,15 +19,26 @@
 
 import numpy as np
 
-def has_zero_vector(M) :
-    """
-    Check for zero vector in input matrix
-    """
-    ncols = M.shape[1]
-    for icol in range(ncols) :
-        if np.all(M[:,icol] == 0) :
-            return True
+def is_full_column_rank(M) :
+    if np.linalg.matrix_rank(M) == M.shape[1] :
+        return True
     return False
+
+def make_full_column_rank(M) :
+    """
+    This module identifies dependent columns and discards them.
+    """
+    nRows, nCols = M.shape
+    M_ = np.empty((nRows,0))
+    cur_rank = 0
+    for i in range(nCols) :
+        new_rank = np.linalg.matrix_rank(M[:,0:i+1])
+        if cur_rank == new_rank :
+            continue          
+        M_ = np.concatenate((M_, M[:,[i]]), axis=1)
+        cur_rank = new_rank
+    return M_
+
 
 def compute_projection_matrix(v) :
     """
@@ -87,15 +98,29 @@ Each matrix is a numpy array
 """
 
 test_matrices = np.load('testmatrices.npy',allow_pickle=True)
+"""
+test_matrices = np.array([
+    np.array([[1,2],[2,4]]), 
+    np.array([[1,3,4],[2,2,1],[0,0,0]]),
+    np.array([[1,0],[2,0]]),
+    np.array([[0,0,0],[1,2,0],[0,0,0]]),
+    np.array([[1.0,1,1],[2.0,1,1],[2,3,1]]),
+    np.array([[1.0,0,0],[0,-1,0],[0,0,1]]),
+    np.array([[1.0,1.0,1.0],[1.0,1.0,1.0],[1.0,1.0,0.0]]),
+    np.array([[1.0,2.0,3.0],[1,1,1],[3,1,1],[1,1,1]]),
+    np.random.rand(4,5)
+    ])
+"""
+
 no_matrices = len(test_matrices)
 
 for i in range(no_matrices):
 
     A = test_matrices[i].copy()
-    if has_zero_vector(A) :
-        print("Matrix has zero column, hence cannot be orthogonalized!!!")
-        continue
-    B = compute_gram_schmidt(A)
+    A_ = A
+    if not is_full_column_rank(A) :
+        A_ = make_full_column_rank(A)
+    B = compute_gram_schmidt(A_)
     print('Matrix ',i)
     testpassed = True
     if np.linalg.norm(np.matmul(B.transpose(),B) - np.eye(np.shape(B)[1])) > 0.0001:
