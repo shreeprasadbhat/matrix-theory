@@ -271,8 +271,9 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			\hline			
 			\multirow{3}{*}{onto} & if for every  $\vec{b} \in \mathbb{R}^{m}$,\\
 			& $T(\vec{X})=\vec{b}$ has atleast one solution $\vec{X} \in \mathbb{R}^{n}$\\
-			& \vbox{\begin{equation} \nonumber \text{i.e } dim(Col(T)) = m \implies\textit{Rank(T)} = m \end{equation}}\\
-			& \vbox{\begin{equation} \nonumber \text{and, } \textit{Rank(T)} \leq n \end{equation}}\\
+			& \vbox{\begin{equation} \nonumber \text{i.e } dim(Col(T)) = m \implies\textit{Rank(T)} = m \text{ and } m\leq n\end{equation}}\\
+			& If $m>n$, then $T(\vec{X})=\vec{b}$ will not have solution \\
+			& becuase Rank-Nullity theorem is not satisfied.\\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -300,7 +301,7 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			\multirow{4}{*}{onto} & \vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) > n.\end{equation}}\\
 			& Hence $T(\vec{X})$ can be onto. & Rank-Nullity Theorem is,\\
 			& & $T(\vec{X})$ do not span $F^{m \times 1}.$\\
-			&  & $\therefore$ $T$ is not onto.\\
+			& & $\therefore$ $T$ is not onto.\\
 			\hline
 			\end{tabular}
 			\end{adjustbox}
