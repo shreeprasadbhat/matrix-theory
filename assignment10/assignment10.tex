@@ -280,7 +280,7 @@ if $m>n$ we may have $T$ non-singular but not onto.
 \end{table}
 \pagebreak
 \myemptypage
-\section{Solution}
+\section{Proof}
 \begin{table}[hp]
 	\begin{center}
 	\begin{adjustbox}{width=1\textwidth}
@@ -292,16 +292,15 @@ if $m>n$ we may have $T$ non-singular but not onto.
 			\hline
 			& \multicolumn{1}{|c|}{$m < n$} & \multicolumn{1}{c|}{$m > n$}\\
 			\hline
-			\multirow{4}{*}{singular} & \vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber\implies rank(\vec{A}) > n\end{equation}}\\
-			& From Rank-Nullity Theorem, & $\text{If }T(\vec{X}) = \vec{0}, \vec{A}\vec{X} = \vec{0}$\\
-			& \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) = n\end{equation}} & $\implies \vec{X} = \vec{0}$\\
-			& $\implies Nullity(\vec{A}) \neq 0$ & Hence T(X) is non-singular.\\
-			& $\therefore$ $T(\vec{X})$ is a singular. & \vbox{\begin{equation}\nonumber \implies Nullity(\vec{A}) = 0\end{equation}}\\
+			\multirow{4}{*}{singular} & &\\
+			& Since $rank(\vec{A})<n$, from Rank-Nullity Theorem, & Consider an singular $T$ such that $rank(\vec{A}) > n$\\
+			& $Rank(\vec{A}) + Nullity(\vec{A}) = n$, $\implies Nullity(\vec{A}) \neq 0$ & \\
+			& $\therefore$ $T(\vec{X})$ is singular. & \\
+			&  & \\
 			\hline
-			\multirow{4}{*}{onto} & \vbox{\begin{equation}\nonumber \implies rank(\vec{A}) < n \end{equation}} & \vbox{\begin{equation}\nonumber Rank(\vec{A}) + Nullity(\vec{A}) > n.\end{equation}}\\
-			& Hence $T(\vec{X})$ can be onto. & Rank-Nullity Theorem is,\\
-			& & $T(\vec{X})$ do not span $F^{m \times 1}.$\\
-			& & $\therefore$ $T$ is not onto.\\
+			\multirow{3}{*}{onto} & &\\
+			& Since $m<n$ by definition $T$ can be onto & Since $m>n$ by definition $T$ is not onto.\\
+			& &\\
 			\hline
 			\end{tabular}
 			\end{adjustbox}
