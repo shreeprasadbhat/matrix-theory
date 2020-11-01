@@ -25,7 +25,7 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-
+\usepackage{float}
 \usepackage{longtable}
 \usepackage{multirow}
 
@@ -286,42 +286,59 @@ Let $V$ and $W$ be finite-dimensional vector spaces over the field $F$ and let $
 \pagebreak
 \myemptypage
 \section{Proof}
-Given,
-\begin{equation}\label{eq1}
-	\mathcal{T}(T): T \rightarrow UTU^{-1}
-\end{equation}
-where $U$ is isomorphism of V onto W and,
-\begin{equation}\label{eq2}
-	\mathcal{T}: L(V,V) \rightarrow L(W,W)
-\end{equation}
-
-We have to prove $\mathcal{T}$ is isomorphism of $L(V,V)$ onto $L(W,W)$. i.e it is same as proving $\mathcal{T}$ is invertible, because $isomorphim \implies one-one \implies invertible$ by definition.\\
-\\
-Consider inverse transformation of \eqref{eq1}
-\begin{align}\label{eq3}
-	\mathcal{S}: L(W,W) &\rightarrow L(V,V)\\
-	\mathcal{S}: S &\rightarrow U^{-1}SU
-\end{align}
-where $U^{-1}SU$ is a composition of 3 linear transformations
-\begin{align}\label{eq4}
-	V \xrightarrow{U} W \xrightarrow{S} W \xrightarrow{U^{-1}} V
-\end{align}
-Now consider $\mathcal{S}(UTU^{-1})$,
-\begin{align}\label{eq5}
-	\mathcal{S}(UTU^{-1}) &= U^{-1}(UTU^{-1})U = T
-\end{align}
-Similarly consider $\mathcal{T}(U^{-1}SU)$,
-\begin{align}\label{eq6}
-	\mathcal{T}(U^{-1}SU) &= U(U^{-1}SU)U^{-1} = S
-\end{align}
-From \eqref{eq5} and \eqref{eq6}
-\begin{align}\label{eq7}
-	TS = I \text{ and } ST = I
-\end{align}
-From \eqref{eq7} we can say $\mathcal{T}$ is invertible since we have found an inverse $\mathcal{S}$.\\
-\\
-Hence $\mathcal{T}$ is one-one implies $\mathcal{T}$ isomorphism of $V$ onto $W$.
-\\
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+& \\
+Given & $\mathcal{T}(T): T \rightarrow UTU^{-1}$\\
+& \\
+& $U$ is isomorphism of V onto W\\
+& that means $U$ is $one-one$\\
+& \\
+& $\mathcal{T}: L(V,V) \rightarrow L(W,W)$\\
+& \\
+\hline
+&\\
+To prove & $\mathcal{T}$ is isomorphism of $L(V,V)$\\
+&  onto $L(W,W)$\\
+& \\
+& It is same as proving\\
+& $\mathcal{T}$ is invertible, because \\
+& \\
+& $isomorphim \implies one-one$\\
+& $\implies invertible$ by definition\\
+& \\
+\hline
+& \\
+Proof & Consider inverse transformation\\
+& $\mathcal{S}: L(W,W) \rightarrow L(V,V)$\\
+& $\mathcal{S}: S \rightarrow U^{-1}SU$\\
+& \\
+& where $U^{-1}SU$ is a composition\\ 
+& of 3 linear transformations\\
+& $V \xrightarrow{U} W \xrightarrow{S} W \xrightarrow{U^{-1}} V$\\
+& \\
+& Now consider $\mathcal{S}(UTU^{-1})$,\\
+& \\
+& $\mathcal{S}(UTU^{-1}) = U^{-1}(UTU^{-1})U = T$\\
+& \\
+& Similarly consider $\mathcal{T}(U^{-1}SU)$,\\
+& \\
+& $\mathcal{T}(U^{-1}SU) = U(U^{-1}SU)U^{-1} = S$\\
+& \\
+& $\implies TS = I \text{ and } ST = I$\\
+& \\
+& we can say $\mathcal{T}$ is invertible\\
+& since we have found an inverse $\mathcal{S}$\\
+& \\
+& Hence $\mathcal{T}$ is one-one implies \\
+& $\mathcal{T}$ isomorphism of $V$ onto $W$\\
+&\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 \section{Example}
 Let
 \begin{equation}
