@@ -251,25 +251,25 @@ Show that the trace functional on $n\times n$ matrices is unique in the followin
 \begin{tabular}{|c|c|}
 \hline
 & \\
-&  $W$ is the space of $n \times n$ matrices over\\
+Given &  $W$ is the space of $n \times n$ matrices over\\
 &  the field $F$\\
-Given & \\
+ & \\
 & $f$ is a linear functional on $W$, that\\
 & $f(AB) = f(BA)$\\
 & \\
 \hline
 & \\
-& $f$ is scalar multiple of trace \\
+To prove & $f$ is scalar multiple of trace \\
 & $f(A) = c\times \text{trace}(A)$\\
-To prove & and\\
+ & and\\
 & If $f(I)=n$, then $f$ is the trace\\
 & $f(A) = \text{trace}(A)$\\
 & \\
 \hline
 & \\
-Basis & Let $\{E^{pq}, 1\leq p,q \leq n\}$ be the \\
-of $W$ & basis of $W$ where $E^{pq}$ is a  \\
-& $n \times n$ matrix such that, \\
+Basis & Let $\{E^{pq}, 1\leq p,q \leq n\}$ be the basis\\
+of $W$ &  of $W$ where $E^{pq}$ is a  $n \times n$ matrix\\
+& \\
 & $E^{pq} = \begin{cases} 1  \quad pq^{th} \text{-position}\\ 0 \quad \text{everywhere else}\end{cases}$\\
 & \\
 \hline
@@ -281,12 +281,12 @@ of $W$ & basis of $W$ where $E^{pq}$ is a  \\
 \begin{tabular}{|c|c|}
 \hline
 & \\
-& If $p=q$, we know $I = \displaystyle\sum_{p,q = 1}^n E^{pp}$ then\\
+Find $f(E^{pq})$ & If $p=q$, we know $I = \displaystyle\sum_{p,q = 1}^n E^{pp}$ then\\
 & $f(I) = \displaystyle\sum_{p,q = 1}^n f(E^{pp}) \implies f(I) = n f(E^{pp})$\\ 
 & \\
-Find & $\implies f(E^{pp}) = \frac{f(I)}{n}$\\
+ & $\implies f(E^{pp}) = \frac{f(I)}{n}$\\
 & \\
-$f(E^{pq})$ & If $p \neq q$, then \\
+ & If $p \neq q$, then \\
 & \\
 & $f(E^{pq}) =  f(E^{p1}E^{1q}) = f(E^{1q}E^{p1}) = \vec{0} $\\
 & \\
@@ -296,21 +296,20 @@ $f(E^{pq})$ & If $p \neq q$, then \\
 & \\
 \hline
 & \\
-& Let $A \in W$, then $A = \displaystyle\sum_{p,q = 1}^n c^{pq}E^{pq}$\\
-& \\
+Proof & Let $A \in W$, then $A = \displaystyle\sum_{p,q = 1}^n c^{pq}E^{pq}$\\
+$\left( find \enspace f(A)\right)$ & \\
 & Also, $\text{trace}(A) = \displaystyle\sum_{p,q = 1}^n c^{pq}\text{trace}(E^{pq})$\\
-& \\
-& Since $f$ is linear, $f(A) = \displaystyle\sum_{p,q = 1}^n c^{pq}f(E^{pq})$\\
-Proof & \\
-& $f(A) = \displaystyle\sum_{p,q = 1}^n c^{pq}\left(\frac{f(I)}{n}\text{trace}(E^{pq})\right)$\\
-& \\
+ & \\
+ & Since $f$ is linear, $f(A) = \displaystyle\sum_{p,q = 1}^n c^{pq}f(E^{pq})$\\
+ & \\
+ & $f(A) = \displaystyle\sum_{p,q = 1}^n c^{pq}\left(\frac{f(I)}{n}\text{trace}(E^{pq})\right)$\\
+ & \\
 & $f(A) = \frac{f(I)}{n}\text{trace}(A)$\\
 & \\
 & Hence $f$ is a scalar multiple of trace.\\
 & \\
-& If $f(I)=n$, $f(A) = \text{trace}(A)$\\
-& Hence f is the trace function\\
-& \\
+& If $f(I)=n$, then $f(A) = \text{trace}(A)$\\
+& Hence $f$ is the trace function\\
 \hline
 \end{tabular}
 \end{center}
