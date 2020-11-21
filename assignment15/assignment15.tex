@@ -283,6 +283,7 @@ Let $V$ be a finite-dimensional vector space over the field $F$. Show that $T \r
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{fig/transpose.png}
+\caption{$\enspace \phi : L(V,V) \rightarrow L(V^*,V^*)$}
 \end{figure}
 \begin{table}[h]
 \begin{center}
@@ -330,19 +331,21 @@ Consider, $T \in L(\mathbb{R}^3,\mathbb{R}^3)$
 	T &= \myvec{2 & 1 & 1\\ 1 & 1 & 0\\ 0 & 0 & 1} \text{ and }\\
 	T' &= \myvec{2 & 1 & 0\\1 & 1 & 0\\1 & 0 & 1}
 \end{align}
-If $T \in L(\mathbb{R}^3,\mathbb{R}^3)$ we can show that $T' \in L({\mathbb{R}^3}^*,{\mathbb{R}^3}^*)$. Consider linear functional $f : {\mathbb{R}^3}^* \rightarrow F$ 
+If $T \in L(\mathbb{R}^3,\mathbb{R}^3)$ we can show that $T' \in L({\mathbb{R}^3}^*,{\mathbb{R}^3}^*)$ as follows.\\ 
+\\Consider linear functional $f : {\mathbb{R}^3}^* \rightarrow F$ 
 \begin{align}
-	f = 2x + 3y + 4z
+	f(x,y,z) = 2x + 3y + 4z
 \end{align}
 Let $g : \mathbb{R}^3 \rightarrow F$. By definition of transpose,
 \begin{align}
 	g &= T'f\\
 	&= \myvec{2 & 1 & 0\\1 & 1 & 0\\1 & 0 & 1}\myvec{2\\3\\4} = \myvec{7\\5\\6}\\
-	g &= 7x + 5y + 6z
+	g(x,y,z) &= 7x + 5y + 6z
 \end{align}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{fig/transpose_example.png}
+\caption{$T: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ and $T': {\mathbb{R}^3}^* \rightarrow {\mathbb{R}^3}^{**}$}
 \end{figure}
 Consider vector in $v = \myvec{1\\2\\3} \in \mathbb{R}^3$,
 \begin{align}
