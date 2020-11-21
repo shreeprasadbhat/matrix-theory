@@ -245,44 +245,45 @@ https://github.com/shreeprasadbhat/matrix-theory/blob/master/assignment15/
 %
 \section{Problem}
 Let $V$ be a finite-dimensional vector space over the field $F$. Show that $T \rightarrow T^t$ is an isomorphism of $L(V,V)$ onto $L(V^*,V^*)$.
-%\section{Defintions}
-%\begin{table}[h]
-%	\begin{center}
-%		\begin{tabular}{|c|c|}
-%			\hline
-%			& \\
-%			isomorphism & Any $one-one$ linear trans-\\
-%			& -formation $T : V\rightarrow W$ is \\
-%			& $\textit{isormorphism of}$ $V$ $\textit{onto}$ $W$\\
-%			& \\
-%			\hline	
-%			& \\		
-%			one-one & $T : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be\\
-%			& $\textit{one-one}$ if for every  $\vec{b} \in \mathbb{R}^{m}$,  \\
-%			& $\vec{A}\vec{X} =\vec{b}$ has at most one\\
-%			& solution in $\mathbb{R}^{n}$.\\
-%			& \\
-%			& By definition, all $invertible$\\
-%			& transformations are $\textit{one-one}$\\
-%			& \\
-%			\hline
-%			& \\
-%			invertible & $T : V \rightarrow W$ is $\textit{invertible}$ if\\
-%			& there exists another linear\\
-%			& transformation $U: W \rightarrow V$\\
-%			& such that $UT$ is the $identity$\\
-%			& transformation on $V$ and $TU$\\
-%			& is the identity transformation\\
-%			& on $W$.\\
-%			& \\
-%			\hline
-%		\end{tabular}
-%	\end{center}
-%\end{table}
+\section{Defintions}
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			& \\
+			\textit{isomorphism} & Any $one-one$ linear trans-\\
+			& -formation $T : V\rightarrow W$ is \\
+			& $\textit{isormorphism of}$ $V$ $\textit{onto}$ $W$\\
+			& \\
+			\hline	
+			& \\		
+			\textit{one-one} & $T : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ is said to be\\
+			& $\textit{one-one}$ if for every  $\vec{b} \in \mathbb{R}^{m}$,  \\
+			& $\vec{A}\vec{X} =\vec{b}$ has at most one\\
+			& solution in $\mathbb{R}^{n}$.\\
+			& \\
+			& By definition, all $invertible$\\
+			& transformations are $\textit{one-one}$\\
+			& \\
+			\hline
+			& \\
+			\textit{invertible} & $T : V \rightarrow W$ is $\textit{invertible}$ if\\
+			& there exists another linear\\
+			& transformation $U: W \rightarrow V$\\
+			& such that $UT$ is the $identity$\\
+			& transformation on $V$ and $TU$\\
+			& is the identity transformation\\
+			& on $W$.\\
+			& \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\pagebreak
 \section{Solution}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{fig/transpose.png}
+\includegraphics[width=2.5in]{fig/transpose.png}
 \caption{$\enspace \phi : L(V,V) \rightarrow L(V^*,V^*)$}
 \end{figure}
 \begin{table}[h]
@@ -291,22 +292,18 @@ Let $V$ be a finite-dimensional vector space over the field $F$. Show that $T \r
 \hline
 & \\
 Given & $\phi(T) = T'$ where\\
-& \\
 & $\phi : L(V,V) \rightarrow L(V^*,V^*)$\\
-& \\
 & $T \in L(V,V)$ and $T' \in L(V^*,V^*)$\\
 & \\
 \hline
 & \\
 To prove & $\phi$ is an $isomorphism$ of\\
 & $L(V,V) \enspace onto \enspace L(V^*,V^*)$\\
-& \\
-& $i.e \enspace \phi \text{ is } one-one$\\
-&  $\implies \phi$ is invertible\\
+& $i.e \enspace \phi \text{ is } one-one \implies \phi$ is \textit{invertible}\\
 & \\ 
 \hline
 & \\
-Proof & Consider a transformation\\
+Proof & Consider a linear transformation\\
 & $\psi : L(V^*,V^*) \rightarrow L((V^*)^*,(V^*)^*)$\\
 & \\
 & We know, $L((V^*)^*,(V^*)^*) = L(V,V)$\\
@@ -317,14 +314,13 @@ Proof & Consider a transformation\\
 & \\
 & $\therefore$ $\phi$ is invertible with $\psi$ its inverse.\\
 & \\
-& Hence $\phi$ is $\textit{isomorphism}$ of \\
-& $L(V,V)$ onto $L(V^*,V^*)$\\
+& Hence $\phi$ is $\textit{isomorphism}$\\
 & \\
 \hline
 \end{tabular}
 \end{center}
 \end{table}
-\pagebreak
+
 \section{Example}
 Consider, $T \in L(\mathbb{R}^3,\mathbb{R}^3)$
 \begin{align}
