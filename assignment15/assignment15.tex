@@ -351,14 +351,17 @@ Consider vector in $v = \myvec{1\\2\\3} \in \mathbb{R}^3$,
 	 &= 2*7 + 3*3 + 4*3 = 35\\
 	 g(1,2,3) &= 7*1 + 5*2 + 6*3 = 35 
 \end{align}
-Hence verified $g = T'f$, and $T'$ is transpose of $T$. 
-Given,  $\phi T = T'$
+Hence verified $g = T'f$, and $T'$ is transpose of $T$. \\
+\\
+Now we will show that $\phi$ is invertible. 
+Given,
 \begin{align}
+	\phi T &= T'\\
 	\phi &= T'T^{-1}\\
 	&= \myvec{2 & 1 & 0\\1 & 1 & 0\\1 & 0 & 1}\myvec{2 & 1 & 1\\ 1 & 1 & 0\\ 0 & 0 & 1}^{-1}\\
 	&= \myvec{2 & 1 & 0\\1 & 1 & 0\\1 & 0 & 1}\myvec{1 & -1 & -1\\-1 & 2 & 1\\0 & 0 & 1}\\
 	\phi &= \myvec{1 & 0 & -1\\0 & 1 & 0\\0 & 0 & 1}\\
 	\phi^{-1} &= \myvec{1 & 0 & -1\\0 & 1 & 0\\0 & 0 & 1}^{-1} = \myvec{1 & 0 & 1\\0 & 1 & 0\\0 & 0 & 1}
 \end{align}
-Since $\phi^{-1}$ exists $\phi$ is isomorphism of $L(V,V)$ onto $L(V^*,V^*)$
+Since $\phi^{-1}$ exists, $\phi$ is isomorphism of $L(V,V)$ onto $L(V^*,V^*)$
 \end{document}
