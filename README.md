@@ -20,3 +20,9 @@ https://github.com/gadepall/college/blob/master/hoffman/book/Linear%20Algebra%20
 
 dresden :
 https://github.com/gadepall/school/blob/master/dresden/book/solidanalyticalg031938mbp.pdf
+
+ugcdec2017:
+https://github.com/gadepall/papers/blob/master/ugc/math/mathA_Dec2017.pdf
+
+ugcjune2017:
+https://github.com/gadepall/papers/blob/master/ugc/math/mathA_June2017.pdf
