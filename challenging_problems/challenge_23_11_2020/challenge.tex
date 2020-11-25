@@ -273,14 +273,69 @@ Find determinant of $V$,
 \end{align}
 Hence the given equation represents pair of planes.\\
 \\
-To move the figure to origin, put $y = y - \frac{1}{2}$, \eqref{eq4} becomes
-\begin{equation}\label{eq5}
-	\vec{x}^T \myvec{9 & 0 & -3\\0 & -4 & 0\\-3 & 0 & 1}\vec{x} = 0
-\end{equation}
-To make coordinate axis parallel to figure axis, perform $spectral$ $decomposition$ on \eqref{eq5}, 
-\begin{align}\label{eq6}
-	\vec{x}^T\myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}} \myvec{10 & 0 & 0\\0 & -4 & 0\\0 & 0 &0}\myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}}\vec{x} = 0
+Do $affine$ $transformation$ of the given object.\\\\
+Find a point on the line of intersection of planes, we have
+\begin{align}
+	\myvec{9 & 0 & -3\\0 & -4 & 0\\-3 & 0 & 1}\myvec{\alpha \\ \beta \\ \gamma} &= \myvec{0\\2\\0}
 \end{align}
+find $(\alpha, \beta, \gamma)$ using row reduction,
+\begin{align}
+	\myvec{9 & 0 & -3 & 0\\0 & -4 & 0 & 2\\-3 & 0 & 1 & 0} &\xleftrightarrow[]{R_3 + \frac{R_1}{3}} \myvec{9 & 0 & -3 & 0\\0 & -4 & 0 & 2\\0 & 0 & 0 & 0}\\
+	\myvec{9 & 0 & -3\\0 & -4 & 0\\0 & 0 & 0}\myvec{\alpha \\ \beta \\ \gamma} &= \myvec{0\\2\\0}\\
+	\implies \beta = \frac{-1}{2}&\\
+	\text{ choose } &\gamma = 0, \implies \alpha = 0\\
+	\therefore (\alpha, \beta, \gamma) &= (0, -\frac{1}{2}, 0)
+\end{align}
+\\
+To move the given object to origin, set
+\begin{align}
+	(x, y, z) &= (x,y,z) - (\alpha, \beta, \gamma)\\
+	\label{eq15}&= (x,\enspace y - \frac{1}{2}, \enspace z)
+\end{align}
+Substitute \eqref{eq15} in given equation
+\begin{align}
+	9x^2-4\left(y - \frac{1}{2}\right)^2+z^2&-6xz-4\left(y - \frac{1}{2}\right)-1 &= 0\\
+	\label{eq17}^2-4y^2&+z^2-6xz = 0
+\end{align}
+\eqref{eq17} can be written in matrix form as
+\begin{align}
+	\label{eq14}\vec{x}^T \myvec{9 & 0 & -3\\0 & -4 & 0\\-3 & 0 & 1}\vec{x} = 0
+\end{align}
+\\
+To make the coordinate axis parallel to object axis, perform $spectral$ $decomposition$ on \eqref{eq14},\\ find eigenvectors,
+\begin{align}
+	\myvec{9-\lambda & 0 & -3\\0 & -4-\lambda & 0\\-3 & 0 & 1-\lambda} = 0\\
+	(9-\lambda)(-4-\lambda)(1-\lambda) - 3(-4-\lambda)(3) = 0\\	
+	(-4-\lambda)(9 - 9\lambda- \lambda + \lambda^2 - 9) = 0\\
+	(-4-\lambda)\lambda(\lambda-10) = 0\\
+	\implies\text{Eigen values are } \lambda = 0,-4,10
+\end{align}
+Find eigen vectors,\\
+Put $\lambda = 0$
+\begin{align}
+	\myvec{9 & 0 & -3\\0 & -4 & 0\\-3 & 0 & 1}\vec{e_1} = 0 \implies \vec{e_1}=\myvec{-3\\0\\1}
+\end{align}
+Put $\lambda = -4$
+\begin{align}
+	\myvec{13 & 0 & -3\\0 & 0 & 0\\-3 & 0 & 5}\vec{e_2} = 0 \implies \vec{e_2}=\myvec{0\\1\\0}
+\end{align}
+Put $\lambda = 10$
+\begin{align}
+	\myvec{-1 & 0 & -3\\0 & -14 & 0\\-3 & 0 & -9}\vec{e_3} = 0 \implies \vec{e_3} = \myvec{\frac{1}{3}\\0\\1}
+\end{align}
+Normalized eigen vectors are
+\begin{align}
+	\vec{e_1}=\myvec{ \frac{-3}{\sqrt{10}} \\ 0 \\ \frac{1}{\sqrt{10}}}, \enspace \vec{e_2}=\myvec{0\\1\\0}, \enspace \vec{e_3} = \myvec{\frac{1}{\sqrt{10}} \\ 0\\ \frac{3}{\sqrt{10}}}
+\end{align}
+Hence eigen decomposition of matrix is
+{\footnotesize	
+\begin{align}\label{eq24}
+	\myvec{9 & 0 & -3\\0 & -4 & 0\\-3 & 0 & 1} = \myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}} \myvec{10 & 0 & 0\\0 & -4 & 0\\0 & 0 &0}\myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}}
+\end{align}}
+Substitute \eqref{eq24} in \eqref{eq14}
+{\small\begin{align}\label{eq6}
+	\vec{x}^T\myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}} \myvec{10 & 0 & 0\\0 & -4 & 0\\0 & 0 &0}\myvec{\frac{-3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}}\\ 0 & 1 & 0\\ \frac{1}{\sqrt{10}} & 0 & \frac{3}{\sqrt{10}}}\vec{x} = 0
+\end{align}}
 Put $x'=\frac{-3x+z}{\sqrt{10}}$, $y'=y$, $z'=\frac{x+3z}{\sqrt{10}}$ in \eqref{eq6}, we get
 \begin{align}
 	\myvec{x' \\y'\\z'}^T \myvec{10 & 0 & 0\\0 & -4 & 0\\0 & 0 &0} \myvec{x' \\y'\\z'} &= 0\\
